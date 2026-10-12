@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LuxStore - Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#b3c5ff",
+            "primary-fixed": "#dbe1ff",
+            "on-error": "#ffffff",
+            "surface-container-high": "#e7e7f1",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e2e2eb",
+            "secondary": "#3259b6",
+            "secondary-container": "#799dff",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#f3f3fd",
+            "tertiary-fixed-dim": "#8ad7a2",
+            "on-primary-fixed-variant": "#003fa5",
+            "surface-container": "#ededf7",
+            "outline": "#737685",
+            "tertiary-container": "#1c6b40",
+            "surface-dim": "#d9d9e3",
+            "on-primary-container": "#ccd7ff",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#0f409d",
+            "on-tertiary-fixed": "#00210f",
+            "outline-variant": "#c3c6d5",
+            "background": "#faf8ff",
+            "primary-container": "#2457c5",
+            "surface-bright": "#faf8ff",
+            "primary": "#003fa4",
+            "inverse-primary": "#b3c5ff",
+            "inverse-surface": "#2e3037",
+            "tertiary": "#00522c",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e2e2eb",
+            "surface": "#faf8ff",
+            "on-surface": "#191b22",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "on-background": "#191b22",
+            "tertiary-fixed": "#a6f4bd",
+            "inverse-on-surface": "#f0f0fa",
+            "on-secondary-container": "#003183",
+            "on-tertiary-fixed-variant": "#00522c",
+            "primary-fixed-dim": "#b3c5ff",
+            "on-secondary-fixed": "#001849",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#9be9b3",
+            "secondary-fixed": "#dae1ff",
+            "on-primary-fixed": "#001849",
+            "surface-tint": "#2457c5",
+            "on-surface-variant": "#434653"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-xl": "3rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-xl-mobile": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-xl": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          "fontSize": {
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col justify-between selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar Component -->
+<header class="bg-surface dark:bg-surface sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-gutter py-space-md max-w-7xl mx-auto">
+<div class="flex items-center gap-space-xl">
+<a class="text-headline-md font-headline-md font-semibold text-primary dark:text-inverse-primary" href="#">LuxStore</a>
+<nav class="hidden md:flex items-center gap-space-lg">
+<a class="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Shop</a>
+<a class="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Collections</a>
+<a class="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">About</a>
+</nav>
+</div>
+<div class="flex items-center gap-space-md">
+<!-- Interactive Search Bar with Autocomplete -->
+<div class="relative hidden sm:block">
+<div class="flex items-center bg-surface-container px-3 py-1.5 rounded-full border border-surface-variant/60 focus-within:border-primary">
+<span class="material-symbols-outlined text-on-surface-variant text-xl mr-2">search</span>
+<input class="bg-transparent text-on-surface text-body-sm focus:outline-none w-48 lg:w-64 placeholder:text-on-surface-variant/70" id="searchInput" placeholder="Search products..." type="text"/>
+</div>
+<!-- Autocomplete Dropdown -->
+<div class="absolute left-0 right-0 mt-2 bg-surface-container-lowest border border-surface-variant rounded-xl shadow-lg hidden z-50 overflow-hidden" id="searchDropdown">
+<div class="p-2 text-xs font-semibold text-on-surface-variant px-3 border-b border-surface-variant/40">Matching Products</div>
+<div class="max-h-64 overflow-y-auto divide-y divide-surface-variant/30">
+<a class="flex items-center gap-3 p-3 hover:bg-surface-container-low transition-colors" href="#">
+<div class="w-10 h-10 rounded-lg bg-cover bg-center shrink-0 border border-surface-variant" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7jA06VFddnk9z5_RvkKbsXspaYiwNUJomrrRPflIikZp5vhxPHOOwlE-2yCV_FxxhRrkj202NuhDPz-BZWS38MZhSuLXGyjRgzqDXQWP_f-B1wFIKUlhyUBcaWDJzkf9reOkKaP0UhoFDK_-Gx2YnJR40JOHLR9FrupW_8kjX5t0yaeYC8RItp5rkGWAVMb_p_OaYfJMMBZK-sGfJHP_WQOEHIJvK2GigZIh-dA55O22cS-IHUV4OtA')"></div>
+<div class="flex-grow">
+<h4 class="text-body-sm font-medium text-on-surface">Minimalist Ceramic Mug</h4>
+<span class="text-label-sm text-on-surface-variant">Home &amp; Kitchen</span>
+</div>
+<span class="text-body-sm font-semibold text-primary">$28.00</span>
+</a>
+<a class="flex items-center gap-3 p-3 hover:bg-surface-container-low transition-colors" href="#">
+<div class="w-10 h-10 rounded-lg bg-cover bg-center shrink-0 border border-surface-variant" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCBOiGr6RGC5H6Li72YQF53MmF5gfsVphZKfvaZrjqbzWMOJ-QKmhJ8Oohv8GYfHm9iVppCaxrrAWhqNVuFfGA-mw-9qU5LQi_-0nkl6Og4oVmIY6WcLGpWOr59fOuU5NNcZ6ep558zYBwaz29K53Aw39OXg5axWKhfYjEwenCmwFiDkTRc1eQo28sFEq0bWKZ7HfM3H4idxr9SPEuJme601lTWNFVS_NMyli7o7V0QMXCydftC8-Bxw')"></div>
+<div class="flex-grow">
+<h4 class="text-body-sm font-medium text-on-surface">Brass Desk Lamp</h4>
+<span class="text-label-sm text-on-surface-variant">Lighting</span>
+</div>
+<span class="text-body-sm font-semibold text-primary">$120.00</span>
+</a>
+</div>
+</div>
+</div>
+<button aria-label="Wishlist" class="p-2 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<button aria-label="Cart" class="p-2 rounded-full bg-primary-container text-on-primary-container relative">
+<span class="material-symbols-outlined text-xl">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-error text-on-error text-label-sm w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full px-gutter max-w-7xl mx-auto py-space-xl flex-grow">
+<!-- Page Header -->
+<div class="mb-space-xl">
+<h1 class="text-headline-lg font-headline-lg text-on-surface mb-space-xs">Shopping Cart &amp; Checkout</h1>
+<p class="text-body-md text-on-surface-variant">Review your items and complete your secure order.</p>
+</div>
+<!-- Checkout Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left Column: Cart Items & Forms -->
+<div class="lg:col-span-7 flex flex-col gap-space-xl">
+<!-- Cart Items Section -->
+<section class="bg-surface-container-lowest p-space-lg rounded-xl border border-surface-variant/50 shadow-sm">
+<div class="flex justify-between items-center mb-space-lg pb-space-md border-b border-surface-variant">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Cart Items (2)</h2>
+<span class="text-label-md text-primary font-medium">Free Shipping Unlocked</span>
+</div>
+<div class="flex flex-col gap-space-lg">
+<!-- Item 1 -->
+<div class="flex gap-space-md items-center pb-space-lg border-b border-surface-variant/40">
+<div class="w-20 h-20 rounded-lg bg-cover bg-center shrink-0 border border-surface-variant" data-alt="A detailed high-end studio shot of a minimalist matte ceramic coffee mug in crisp white, resting on a clean oak wood surface. Soft diffuse lighting creates gentle shadows, highlighting the smooth texture and understated luxury aesthetic of the modern product design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7jA06VFddnk9z5_RvkKbsXspaYiwNUJomrrRPflIikZp5vhxPHOOwlE-2yCV_FxxhRrkj202NuhDPz-BZWS38MZhSuLXGyjRgzqDXQWP_f-B1wFIKUlhyUBcaWDJzkf9reOkKaP0UhoFDK_-Gx2YnJR40JOHLR9FrupW_8kjX5t0yaeYC8RItp5rkGWAVMb_p_OaYfJMMBZK-sGfJHP_WQOEHIJvK2GigZIh-dA55O22cS-IHUV4OtA')"></div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-body-lg font-medium text-on-surface">Minimalist Ceramic Mug</h3>
+<p class="text-body-sm text-on-surface-variant">Color: Matte White / Size: Standard</p>
+</div>
+<span class="text-body-lg font-semibold text-on-surface">$28.00</span>
+</div>
+<div class="flex justify-between items-center mt-space-md">
+<div class="flex items-center border border-surface-variant rounded-lg overflow-hidden">
+<button class="px-3 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">-</button>
+<span class="px-4 py-1 text-label-md font-medium text-on-surface">1</span>
+<button class="px-3 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">+</button>
+</div>
+<button class="text-error hover:text-error-container text-body-sm flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-base">delete</span>
+                    Remove
+                  </button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-space-md items-center">
+<div class="w-20 h-20 rounded-lg bg-cover bg-center shrink-0 border border-surface-variant" data-alt="A detailed close-up shot of a luxury brass desk lamp featuring a sleek geometric arm and a warm LED glow, staged against a calm light grey background. The refined metallic finish and clean modern lines reflect an upscale, sophisticated interior design aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCBOiGr6RGC5H6Li72YQF53MmF5gfsVphZKfvaZrjqbzWMOJ-QKmhJ8Oohv8GYfHm9iVppCaxrrAWhqNVuFfGA-mw-9qU5LQi_-0nkl6Og4oVmIY6WcLGpWOr59fOuU5NNcZ6ep558zYBwaz29K53Aw39OXg5axWKhfYjEwenCmwFiDkTRc1eQo28sFEq0bWKZ7HfM3H4idxr9SPEuJme601lTWNFVS_NMyli7o7V0QMXCydftC8-Bxw')"></div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-body-lg font-medium text-on-surface">Brass Desk Lamp</h3>
+<p class="text-body-sm text-on-surface-variant">Finish: Brushed Brass</p>
+</div>
+<span class="text-body-lg font-semibold text-on-surface">$120.00</span>
+</div>
+<div class="flex justify-between items-center mt-space-md">
+<div class="flex items-center border border-surface-variant rounded-lg overflow-hidden">
+<button class="px-3 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">-</button>
+<span class="px-4 py-1 text-label-md font-medium text-on-surface">1</span>
+<button class="px-3 py-1 bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">+</button>
+</div>
+<button class="text-error hover:text-error-container text-body-sm flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-base">delete</span>
+                    Remove
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Shipping Address Form -->
+<section class="bg-surface-container-lowest p-space-lg rounded-xl border border-surface-variant/50 shadow-sm">
+<h2 class="text-headline-sm font-headline-sm text-on-surface mb-space-md">Shipping Address</h2>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block text-label-md font-medium text-on-surface-variant mb-space-xs">First Name</label>
+<input class="w-full px-space-md py-2.5 rounded-lg border border-surface-variant bg-surface text-on-surface focus:outline-none focus:border-primary-container transition-colors" placeholder="Jane" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-medium text-on-surface-variant mb-space-xs">Last Name</label>
+<input class="w-full px-space-md py-2.5 rounded-lg border border-surface-variant bg-surface text-on-surface focus:outline-none focus:border-primary-container transition-colors" placeholder="Doe" type="text"/>
+</div>
+<div class="md:col-span-2">
+<label class="block text-label-md font-medium text-on-surface-variant mb-space-xs">Street Address</label>
+<input class="w-full px-space-md py-2.5 rounded-lg border border-surface-variant bg-surface text-on-surface focus:outline-none focus:border-primary-container transition-colors" placeholder="123 Luxury Lane, Apt 4B" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-medium text-on-surface-variant mb-space-xs">City</label>
+<input class="w-full px-space-md py-2.5 rounded-lg border border-surface-variant bg-surface text-on-surface focus:outline-none focus:border-primary-container transition-colors" placeholder="San Francisco" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-medium text-on-surface-variant mb-space-xs">Postal Code</label>
+<input class="w-full px-space-md py-2.5 rounded-lg border border-surface-variant bg-surface text-on-surface focus:outline-none focus:border-primary-container transition-colors" placeholder="94107" type="text"/>
+</div>
+</form>
+</section>
+<!-- Payment Method Form -->
+<section class="bg-surface-container-lowest p-space-lg rounded-xl border border-surface-variant/50 shadow-sm">
+<h2 class="text-headline-sm font-headline-sm text-on-surface mb-space-md">Payment Method</h2>
+<div class="flex gap-space-md mb-space-lg">
+<label class="flex-1 border border-primary-container bg-primary-fixed/20 p-space-md rounded-lg flex items-center gap-space-sm cursor-pointer">
+<input checked="" class="text-primary focus:ring-primary" name="payment" type="radio"/>
+<span class="text-label-md font-medium text-on-surface">Credit Card</span>
+</label>
+<label class="flex-1 border border-surface-variant p-space-md rounded-lg flex items-center gap-space-sm cursor-pointer hover:border-surface-variant-high">
+<input class="text-primary focus:ring-primary" name="payment" type="radio"/>
+<span class="text-label-md font-medium text-on-surface">Apple Pay</span>
+</label>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="md:col-span-2">
+<label class="block text-label-md font-medium text-on-surface-variant mb-space-xs">Card Number</label>
+<input class="w-full px-space-md py-2.5 rounded-lg border border-surface-variant bg-surface text-on-surface focus:outline-none focus:border-primary-container transition-colors" placeholder="4532 •••• •••• 8892" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-medium text-on-surface-variant mb-space-xs">Expiration Date</label>
+<input class="w-full px-space-md py-2.5 rounded-lg border border-surface-variant bg-surface text-on-surface focus:outline-none focus:border-primary-container transition-colors" placeholder="MM / YY" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-medium text-on-surface-variant mb-space-xs">CVV</label>
+<input class="w-full px-space-md py-2.5 rounded-lg border border-surface-variant bg-surface text-on-surface focus:outline-none focus:border-primary-container transition-colors" placeholder="123" type="password"/>
+</div>
+</form>
+</section>
+</div>
+<!-- Right Column: Order Summary & Promo Code -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg sticky top-24">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl border border-surface-variant/50 shadow-sm flex flex-col gap-space-lg">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Order Summary</h2>
+<!-- Promo Code Input -->
+<div class="flex gap-space-sm">
+<input class="flex-grow px-space-md py-2 rounded-lg border border-surface-variant bg-surface text-on-surface focus:outline-none focus:border-primary-container text-body-sm transition-colors" placeholder="Promo code" type="text"/>
+<button class="px-space-md py-2 bg-surface-container hover:bg-surface-container-high text-on-surface font-medium rounded-lg text-body-sm transition-colors">Apply</button>
+</div>
+<div class="flex flex-col gap-space-sm border-t border-b border-surface-variant/50 py-space-md">
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>Subtotal</span>
+<span class="text-on-surface font-medium">$148.00</span>
+</div>
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>Shipping</span>
+<span class="text-tertiary font-medium">Free</span>
+</div>
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>Estimated Taxes</span>
+<span class="text-on-surface font-medium">$11.84</span>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-headline-sm font-headline-sm text-on-surface">Total</span>
+<span class="text-headline-md font-semibold text-primary">$159.84</span>
+</div>
+<!-- Checkout CTA Button -->
+<button class="w-full py-3.5 bg-primary-container hover:bg-primary text-on-primary font-medium rounded-lg shadow-sm transition-all flex items-center justify-center gap-space-sm active:scale-[0.98]">
+<span class="material-symbols-outlined text-lg">lock</span>
+            Complete Secure Order
+          </button>
+<p class="text-center text-body-sm text-on-surface-variant flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm text-tertiary">verified_user</span>
+            Encrypted 256-bit SSL Secure Checkout
+          </p>
+</div>
+<!-- Trust Badges Card -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-around text-center">
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-primary text-2xl">local_shipping</span>
+<span class="text-label-sm text-on-surface-variant">Fast Delivery</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-primary text-2xl">published_with_changes</span>
+<span class="text-label-sm text-on-surface-variant">Easy Returns</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-primary text-2xl">support_agent</span>
+<span class="text-label-sm text-on-surface-variant">24/7 Support</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-low dark:bg-inverse-surface border-t border-surface-variant dark:border-inverse-surface mt-space-xl">
+<div class="w-full px-gutter py-space-xl max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-space-md">
+<span class="text-headline-sm font-semibold text-primary dark:text-inverse-primary">LuxStore</span>
+<div class="flex flex-wrap justify-center gap-space-lg text-body-sm">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Customer Support</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Newsletter</a>
+</div>
+<p class="text-body-sm text-on-surface-variant dark:text-surface-variant">© 2023 LuxStore. All rights reserved.</p>
+</div>
+</footer>
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const searchDropdown = document.getElementById('searchDropdown');
+
+  searchInput.addEventListener('input', (e) => {
+    if (e.target.value.trim().length > 0) {
+      searchDropdown.classList.remove('hidden');
+    } else {
+      searchDropdown.classList.add('hidden');
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+      searchDropdown.classList.add('hidden');
+    }
+  });
+
+  searchInput.addEventListener('focus', (e) => {
+    if (e.target.value.trim().length > 0) {
+      searchDropdown.classList.remove('hidden');
+    }
+  });
+</script>
+</body></html>

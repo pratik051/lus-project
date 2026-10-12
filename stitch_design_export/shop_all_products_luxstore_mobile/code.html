@@ -1,0 +1,385 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>LuxStore - New Arrivals &amp; Essentials</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#2457c5",
+            "on-tertiary-fixed-variant": "#00522c",
+            "error": "#ba1a1a",
+            "secondary": "#3259b6",
+            "on-primary-container": "#ccd7ff",
+            "outline": "#737685",
+            "primary": "#003fa4",
+            "tertiary-container": "#1c6b40",
+            "on-primary-fixed-variant": "#003fa5",
+            "on-background": "#191b22",
+            "inverse-primary": "#b3c5ff",
+            "inverse-on-surface": "#f0f0fa",
+            "surface-container": "#ededf7",
+            "surface-container-low": "#f3f3fd",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff",
+            "surface-bright": "#faf8ff",
+            "on-tertiary-container": "#9be9b3",
+            "primary-container": "#2457c5",
+            "surface-container-high": "#e7e7f1",
+            "outline-variant": "#c3c6d5",
+            "tertiary-fixed-dim": "#8ad7a2",
+            "primary-fixed": "#dbe1ff",
+            "surface": "#faf8ff",
+            "primary-fixed-dim": "#b3c5ff",
+            "surface-dim": "#d9d9e3",
+            "inverse-surface": "#2e3037",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#e2e2eb",
+            "on-tertiary-fixed": "#00210f",
+            "surface-container-highest": "#e2e2eb",
+            "secondary-fixed-dim": "#b3c5ff",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#003183",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#799dff",
+            "secondary-fixed": "#dae1ff",
+            "on-secondary-fixed": "#001849",
+            "error-container": "#ffdad6",
+            "tertiary-fixed": "#a6f4bd",
+            "background": "#faf8ff",
+            "on-surface-variant": "#434653",
+            "on-surface": "#191b22",
+            "on-primary-fixed": "#001849",
+            "on-secondary-fixed-variant": "#0f409d",
+            "tertiary": "#00522c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "margin": "2rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xl": "3rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Inter"],
+            "headline-xl-mobile": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "headline-xl": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-sm": ["Inter"]
+          },
+          "fontSize": {
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Mobile Optimized & Desktop) -->
+<header class="sticky top-0 z-50 bg-surface dark:bg-surface">
+<div class="flex justify-between items-center w-full px-gutter py-space-md max-w-7xl mx-auto">
+<div class="flex items-center gap-space-md">
+<a class="text-headline-md font-headline-md font-semibold text-primary dark:text-inverse-primary" href="#">LuxStore</a>
+<nav class="hidden md:flex items-center gap-space-lg">
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Shop</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all duration-200" href="#">Collections</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all duration-200" href="#">About</a>
+</nav>
+</div>
+<div class="flex items-center gap-space-md">
+<button aria-label="Wishlist" class="relative p-2 text-on-surface-variant hover:text-primary transition-all duration-200">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button aria-label="Cart" class="relative p-2 text-on-surface-variant hover:text-primary transition-all duration-200">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute top-0 right-0 bg-primary text-on-primary text-label-sm w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full px-gutter max-w-7xl mx-auto py-space-md">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="text-body-sm text-outline mb-space-sm">
+<span class="">Home</span> / <span class="text-on-surface font-medium">Shop</span>
+</nav>
+<!-- Heading & Product Count -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-md gap-space-xs">
+<h1 class="text-headline-lg-mobile md:text-headline-lg text-on-surface">New Arrivals &amp; Essentials</h1>
+<span class="text-body-sm text-outline">Showing 9 of 48 items</span>
+</div>
+<!-- Sticky Filter & Sort Bar -->
+<div class="sticky top-[60px] z-40 bg-surface/95 backdrop-blur py-space-sm mb-space-md flex items-center justify-between gap-space-sm border-y border-surface-variant">
+<button class="flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-low border border-outline-variant rounded-lg text-label-md text-on-surface hover:bg-surface-container transition-all duration-200">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="">Filter (2)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-low border border-outline-variant rounded-lg text-label-md text-on-surface hover:bg-surface-container transition-all duration-200">
+<span class="">Sort by: Featured</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+<!-- 2-Column Product Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md"><!-- Product 1 -->
+<div class="flex flex-col group cursor-pointer">
+  <div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-[3/4] mb-space-sm border border-surface-variant">
+    <span class="absolute top-2 left-2 z-10 bg-error text-on-error text-label-sm px-2 py-0.5 rounded font-bold">-20%</span>
+    <button aria-label="Save to wishlist" class="absolute top-2 right-2 z-10 p-2 bg-surface/80 backdrop-blur rounded-full text-on-surface hover:text-primary transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center">
+      <span class="material-symbols-outlined text-[18px]">favorite</span>
+    </button>
+    <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsl5A0DynTR1pratKqSG73qsqqHdUGeRhZIPAk8R1QjEhT-vLfNXSXpIWJvMvdu_wr6tSepMoAhTy7RIEbm6JoADQV8OS6RTFy_fl_c6mp8NGtyCyiJ1sB5od9LGxDjfKdOrLAZKv8GfwRFCgvE_pL8Yioae38Rd6qm2B6NnpvANCVwOyVrBz2tiDQuWaub5cCWr6wH9DpRlUt5odUPoHsFVt4ZyaIkHuO8LIFoj1vbRhnaKN332rGmw')"></div>
+  </div>
+  <div class="flex flex-col gap-0.5">
+    <span class="text-label-sm text-outline font-medium uppercase">Outerwear</span>
+    <h2 class="text-body-md font-medium text-on-surface min-h-[40px]">Structured Cashmere Overcoat</h2>
+    <div class="flex items-center gap-space-xs text-secondary mb-0.5">
+      <div class="flex items-center gap-0.5">
+        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="text-label-sm font-semibold text-on-surface">4.9</span>
+      </div>
+      <span class="text-label-sm text-outline">(128)</span>
+    </div>
+    <div class="flex items-center gap-space-xs">
+      <span class="text-body-md font-bold text-primary">$480.00</span>
+      <span class="text-body-sm text-outline line-through">$600.00</span>
+    </div>
+  </div>
+</div>
+
+<!-- Product 2 -->
+<div class="flex flex-col group cursor-pointer">
+  <div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-[3/4] mb-space-sm border border-surface-variant">
+    <button aria-label="Save to wishlist" class="absolute top-2 right-2 z-10 p-2 bg-surface/80 backdrop-blur rounded-full text-on-surface hover:text-primary transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center">
+      <span class="material-symbols-outlined text-[18px]">favorite</span>
+    </button>
+    <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBgG3MjQVoiSaK7UA2JiUIxrAeyfPxa-khHQKqx951dBmNEbaS4jkU4qE0QqExf11BrxvcPtPXU9fq3L-0QghLoX92F3hX9dQ9ZHJQ4qrSTxp8CanDguxOw0R9Cx9pmY3aE2r74vl-dcOl6t795YC0QZM6ghXkFEzxYWzgQioH6uQPytewHCJ2TaTFk3oB0yN8caBiI_8BiL59ehSviX1yzQiQEe8u52fw8sIrLpb2s4qTnsvgI8NzQGg')"></div>
+  </div>
+  <div class="flex flex-col gap-0.5">
+    <span class="text-label-sm text-outline font-medium uppercase">Footwear</span>
+    <h2 class="text-body-md font-medium text-on-surface min-h-[40px]">Minimalist Leather Boot</h2>
+    <div class="flex items-center gap-space-xs text-secondary mb-0.5">
+      <div class="flex items-center gap-0.5">
+        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="text-label-sm font-semibold text-on-surface">4.8</span>
+      </div>
+      <span class="text-label-sm text-outline">(94)</span>
+    </div>
+    <div class="flex items-center gap-space-xs">
+      <span class="text-body-md font-bold text-on-surface">$320.00</span>
+    </div>
+  </div>
+</div>
+
+<!-- Product 3 -->
+<div class="flex flex-col group cursor-pointer">
+  <div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-[3/4] mb-space-sm border border-surface-variant">
+    <span class="absolute top-2 left-2 z-10 bg-error text-on-error text-label-sm px-2 py-0.5 rounded font-bold">-15%</span>
+    <button aria-label="Save to wishlist" class="absolute top-2 right-2 z-10 p-2 bg-surface/80 backdrop-blur rounded-full text-on-surface hover:text-primary transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center">
+      <span class="material-symbols-outlined text-[18px]">favorite</span>
+    </button>
+    <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDy-V1YpkTjOnWb4mtRzshb0p20a3esu4zynDtrY1teejS9kCmo4YK8eAdNEbdB5FitnSioXv7YVQUe0agx0HB8e2_o-AyfPoAqobRGfH7Og3Hk2nUG_nAsw0XLrPdTzrfIOajabyDZEyeYe9C8fVeCvBdT5N1QybSFZqKt0OxOlY2wrVG65AdZJV8T--tLlABr_O2LvaEujJz6ZEe2Ps8u7R8_NiM-OBd-sWey19gtPCaHoQwtdhS1Bg')"></div>
+  </div>
+  <div class="flex flex-col gap-0.5">
+    <span class="text-label-sm text-outline font-medium uppercase">Apparel</span>
+    <h2 class="text-body-md font-medium text-on-surface min-h-[40px]">Silk Utility Shirt</h2>
+    <div class="flex items-center gap-space-xs text-secondary mb-0.5">
+      <div class="flex items-center gap-0.5">
+        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="text-label-sm font-semibold text-on-surface">4.7</span>
+      </div>
+      <span class="text-label-sm text-outline">(52)</span>
+    </div>
+    <div class="flex items-center gap-space-xs">
+      <span class="text-body-md font-bold text-primary">$195.00</span>
+      <span class="text-body-sm text-outline line-through">$230.00</span>
+    </div>
+  </div>
+</div>
+
+<!-- Product 4 -->
+<div class="flex flex-col group cursor-pointer">
+  <div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-[3/4] mb-space-sm border border-surface-variant">
+    <button aria-label="Save to wishlist" class="absolute top-2 right-2 z-10 p-2 bg-surface/80 backdrop-blur rounded-full text-on-surface hover:text-primary transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center">
+      <span class="material-symbols-outlined text-[18px]">favorite</span>
+    </button>
+    <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzT7uJHdAT0X-4DcPbhjTwYOs-5vPEl98JvJIOS9cx3HoDp0noN3xItl-S9YZZ5hLnp14SzdMFQzdBUExy8hN_pa3bMcf1o_qaEkrxbflF9f7Ys1l4JTBCt1dMhQKB9E_jzaMrGTUP4kWPE3WQZ_kHYMgx5CEgoaIfhH3nODuyr3rNeeaCyC5oKyIAiqnVW5ktudVSzMTaeriLs1cG1IOFAfkNFVQc3Ho-LaUWrNltQAqaErt17XkJqw')"></div>
+  </div>
+  <div class="flex flex-col gap-0.5">
+    <span class="text-label-sm text-outline font-medium uppercase">Living</span>
+    <h2 class="text-body-md font-medium text-on-surface min-h-[40px]">Sculptural Ceramic Vase</h2>
+    <div class="flex items-center gap-space-xs text-secondary mb-0.5">
+      <div class="flex items-center gap-0.5">
+        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="text-label-sm font-semibold text-on-surface">5.0</span>
+      </div>
+      <span class="text-label-sm text-outline">(38)</span>
+    </div>
+    <div class="flex items-center gap-space-xs">
+      <span class="text-body-md font-bold text-on-surface">$140.00</span>
+    </div>
+  </div>
+</div>
+
+<!-- Product 5 -->
+<div class="flex flex-col group cursor-pointer">
+  <div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-[3/4] mb-space-sm border border-surface-variant">
+    <button aria-label="Save to wishlist" class="absolute top-2 right-2 z-10 p-2 bg-surface/80 backdrop-blur rounded-full text-on-surface hover:text-primary transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center">
+      <span class="material-symbols-outlined text-[18px]">favorite</span>
+    </button>
+    <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8Oqs3EgTiiw-qfLCxSbuMMHaXvsVgPm_yVVjgsbWRDDjET1Ot1ZZfSMMpaaBrDl2Sxe2jj8obPfsCOqj7PaN3PEQIqlHMmG-cYocyMcaqg3d7qi5ZNb21BcjHVkq94alEAwBjCdgHwvYm9IEtc_9CuhiN_qtjf69PHLqCgR5ol2rWn63ucwgOt7VVXKhDbBodYTIBBqR8cvYzJBlp9obdXIelRnkUmR4gyh1boGlWYGAMfBOMfn1HTQ')"></div>
+  </div>
+  <div class="flex flex-col gap-0.5">
+    <span class="text-label-sm text-outline font-medium uppercase">Knitwear</span>
+    <h2 class="text-body-md font-medium text-on-surface min-h-[40px]">Merino Wool Crewneck</h2>
+    <div class="flex items-center gap-space-xs text-secondary mb-0.5">
+      <div class="flex items-center gap-0.5">
+        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="text-label-sm font-semibold text-on-surface">4.9</span>
+      </div>
+      <span class="text-label-sm text-outline">(116)</span>
+    </div>
+    <div class="flex items-center gap-space-xs">
+      <span class="text-body-md font-bold text-on-surface">$210.00</span>
+    </div>
+  </div>
+</div>
+
+<!-- Product 6 -->
+<div class="flex flex-col group cursor-pointer">
+  <div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-[3/4] mb-space-sm border border-surface-variant">
+    <span class="absolute top-2 left-2 z-10 bg-error text-on-error text-label-sm px-2 py-0.5 rounded font-bold">-30%</span>
+    <button aria-label="Save to wishlist" class="absolute top-2 right-2 z-10 p-2 bg-surface/80 backdrop-blur rounded-full text-on-surface hover:text-primary transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center">
+      <span class="material-symbols-outlined text-[18px]">favorite</span>
+    </button>
+    <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuARtjoJ7GbYZhtXMHiV8UQvRn_eSyOFF5_GUE21ooGH6KwbF3UExzDCd6v0ehOV6wjR24m7zpaTsURaDKj3lo9qRDTwbpVtviWhzbsBwxlGXxMT0MrkO91J6pHPpRiQfXJH3vIiJ6KwC0ceBszjFft2XPvJRcCng0Og_PFKSwZ0gA7CtVVjgeCJibFIGJe1aN81f9AMPjvjJ-N-GmpOm6FUTzaV8vQexE7d6okoQ_qqBf58xMbGERWVGw')"></div>
+  </div>
+  <div class="flex flex-col gap-0.5">
+    <span class="text-label-sm text-outline font-medium uppercase">Accessories</span>
+    <h2 class="text-body-md font-medium text-on-surface min-h-[40px]">Everyday Leather Tote</h2>
+    <div class="flex items-center gap-space-xs text-secondary mb-0.5">
+      <div class="flex items-center gap-0.5">
+        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="text-label-sm font-semibold text-on-surface">4.6</span>
+      </div>
+      <span class="text-label-sm text-outline">(82)</span>
+    </div>
+    <div class="flex items-center gap-space-xs">
+      <span class="text-body-md font-bold text-primary">$350.00</span>
+      <span class="text-body-sm text-outline line-through">$500.00</span>
+    </div>
+  </div>
+</div>
+
+<!-- Product 7 -->
+<div class="flex flex-col group cursor-pointer">
+  <div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-[3/4] mb-space-sm border border-surface-variant">
+    <button aria-label="Save to wishlist" class="absolute top-2 right-2 z-10 p-2 bg-surface/80 backdrop-blur rounded-full text-on-surface hover:text-primary transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center">
+      <span class="material-symbols-outlined text-[18px]">favorite</span>
+    </button>
+    <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD81Cbnoq2DoRKn_7lo8cK9-XznOnrw_-7YGOeGjukqVEfAqQ7mmzBRo0MB5eVwY2FAgBJFm2JA_shPLSTi9Hv2SkuxL-mHB3dDgA6o2A5I0ZDWANrJIMEImcVGj0kSe679Y78BXy9kkVsGffTEK8TP3JCtDuB_GW6_rD_dLGm8RPLnZ1usw81cmMUEOe4h0t_Bj21PSlFzesOPOKjZTTdQq6vmTaCAlpnJTIb2jEt1gScR-Be_BrjfBA')"></div>
+  </div>
+  <div class="flex flex-col gap-0.5">
+    <span class="text-label-sm text-outline font-medium uppercase">Apparel</span>
+    <h2 class="text-body-md font-medium text-on-surface min-h-[40px]">Pleated Wool Trousers</h2>
+    <div class="flex items-center gap-space-xs text-secondary mb-0.5">
+      <div class="flex items-center gap-0.5">
+        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="text-label-sm font-semibold text-on-surface">4.8</span>
+      </div>
+      <span class="text-label-sm text-outline">(45)</span>
+    </div>
+    <div class="flex items-center gap-space-xs">
+      <span class="text-body-md font-bold text-on-surface">$260.00</span>
+    </div>
+  </div>
+</div>
+
+<!-- Product 8 -->
+<div class="flex flex-col group cursor-pointer">
+  <div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-[3/4] mb-space-sm border border-surface-variant">
+    <button aria-label="Save to wishlist" class="absolute top-2 right-2 z-10 p-2 bg-surface/80 backdrop-blur rounded-full text-on-surface hover:text-primary transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center">
+      <span class="material-symbols-outlined text-[18px]">favorite</span>
+    </button>
+    <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9rXkVvfeow5I8eecWI71MUA99Ej1nskUaIBgYBkvtXMm83Y-pV6hj_nsa3xM5xYREAO2p-yMiZ4OYmyNlnGk3aW-qlLC5PZKWkMRgRkGf94k5DO2_2edCxOrZZ-mJF6CLgJ4rKUTvkzYIx7NI8ntzvanftvia-1q6YdgmhmiHcXeqX03rFbDgNUAJr7WUp1Gm7nfLrWxTniZZXBEmwnmlrMRgghfx5MdsyGtIHq-v4ImZb_Rk9L9rFQ')"></div>
+  </div>
+  <div class="flex flex-col gap-0.5">
+    <span class="text-label-sm text-outline font-medium uppercase">Living</span>
+    <h2 class="text-body-md font-medium text-on-surface min-h-[40px]">Minimalist Brass Lamp</h2>
+    <div class="flex items-center gap-space-xs text-secondary mb-0.5">
+      <div class="flex items-center gap-0.5">
+        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span class="text-label-sm font-semibold text-on-surface">4.9</span>
+      </div>
+      <span class="text-label-sm text-outline">(64)</span>
+    </div>
+    <div class="flex items-center gap-space-xs">
+      <span class="text-body-md font-bold text-on-surface">$180.00</span>
+    </div>
+  </div>
+</div></div>
+<!-- Touch-Friendly Pagination Buttons -->
+<div class="flex items-center justify-center gap-space-md mt-space-xl mb-space-lg">
+<button class="px-space-lg py-space-sm bg-surface-container-low border border-outline-variant rounded-lg text-label-md text-on-surface hover:bg-surface-container transition-all duration-200 min-h-[44px] flex items-center justify-center">
+        Previous
+      </button>
+<span class="text-body-sm text-outline">Page 1 of 6</span>
+<button class="px-space-lg py-space-sm bg-primary text-on-primary rounded-lg text-label-md hover:bg-surface-tint transition-all duration-200 min-h-[44px] flex items-center justify-center">
+        Next
+      </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-inverse-surface border-t border-surface-variant dark:border-inverse-surface mt-space-xl">
+<div class="w-full px-gutter py-space-xl max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-space-md">
+<div class="flex flex-col items-center md:items-start gap-space-xs">
+<span class="text-headline-sm font-semibold text-primary dark:text-inverse-primary">LuxStore</span>
+<span class="text-body-sm text-on-surface-variant dark:text-surface-variant">© 2023 LuxStore. All rights reserved.</span>
+</div>
+<div class="flex flex-wrap justify-center gap-space-md">
+<a class="text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all duration-200" href="#">Customer Support</a>
+<a class="text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all duration-200" href="#">Privacy Policy</a>
+<a class="text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all duration-200" href="#">Terms of Service</a>
+<a class="text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all duration-200" href="#">Newsletter</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>

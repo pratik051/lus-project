@@ -1,0 +1,554 @@
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LuxStore - Product Listing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#b3c5ff",
+            "primary-fixed": "#dbe1ff",
+            "on-error": "#ffffff",
+            "surface-container-high": "#e7e7f1",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e2e2eb",
+            "secondary": "#3259b6",
+            "secondary-container": "#799dff",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#f3f3fd",
+            "tertiary-fixed-dim": "#8ad7a2",
+            "on-primary-fixed-variant": "#003fa5",
+            "surface-container": "#ededf7",
+            "outline": "#737685",
+            "tertiary-container": "#1c6b40",
+            "surface-dim": "#d9d9e3",
+            "on-primary-container": "#ccd7ff",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#0f409d",
+            "on-tertiary-fixed": "#00210f",
+            "outline-variant": "#c3c6d5",
+            "background": "#faf8ff",
+            "primary-container": "#2457c5",
+            "surface-bright": "#faf8ff",
+            "primary": "#003fa4",
+            "inverse-primary": "#b3c5ff",
+            "inverse-surface": "#2e3037",
+            "tertiary": "#00522c",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e2e2eb",
+            "surface": "#faf8ff",
+            "on-surface": "#191b22",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "on-background": "#191b22",
+            "tertiary-fixed": "#a6f4bd",
+            "inverse-on-surface": "#f0f0fa",
+            "on-secondary-container": "#003183",
+            "on-tertiary-fixed-variant": "#00522c",
+            "primary-fixed-dim": "#b3c5ff",
+            "on-secondary-fixed": "#001849",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#9be9b3",
+            "secondary-fixed": "#dae1ff",
+            "on-primary-fixed": "#001849",
+            "surface-tint": "#2457c5",
+            "on-surface-variant": "#434653"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-xl": "3rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-xl-mobile": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-xl": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          "fontSize": {
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col justify-between selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-gutter py-space-md max-w-7xl mx-auto">
+<div class="flex items-center gap-space-xl">
+<a class="text-headline-md font-headline-md font-semibold text-primary dark:text-inverse-primary" href="#">LuxStore</a>
+<nav class="hidden md:flex items-center gap-space-lg">
+<a class="text-label-md font-label-md text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-all duration-200" href="#">Shop</a>
+<a class="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all duration-200" href="#">Collections</a>
+<a class="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all duration-200" href="#">About</a>
+</nav>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="relative hidden sm:block" id="search-container">
+<input autocomplete="off" class="bg-surface-container-low border border-[#E5E5E5] rounded-lg px-3 py-1.5 text-body-sm text-on-surface focus:outline-none focus:border-primary w-48 lg:w-64 transition-all" id="search-input" placeholder="Search products..." type="text"/>
+<span class="material-symbols-outlined absolute right-2.5 top-2 text-on-surface-variant text-sm">search</span>
+<!-- Autocomplete Dropdown -->
+<div class="hidden absolute left-0 right-0 mt-2 bg-surface border border-[#E5E5E5] rounded-xl shadow-lg overflow-hidden z-50 max-h-96 overflow-y-auto" id="search-dropdown">
+<div class="p-2 text-xs font-semibold text-on-surface-variant uppercase tracking-wider border-b border-[#E5E5E5]">Matching Products</div>
+<div class="divide-y divide-[#E5E5E5]" id="search-results-list">
+<!-- Items populated dynamically or via template -->
+<a class="flex items-center gap-3 p-3 hover:bg-surface-container-low transition-colors" href="#">
+<img alt="Coat" class="w-12 h-12 object-cover rounded-lg bg-surface-container-low" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr4rDm5UM_FfeoXuJvViB_BR56R_rcdUjM-Oz9y0_0N_LGsTSDk6qaVeBKTTmGRuhkqINPlqM7v47DiH2gscEM6MPFmCJkGLLhLwim6FHUAa963GYVm-jvMVAuQwlgNhS3ol00_kQID-WNvkktorcRGQYeX2QKI_hHuOWm54LotDy5spXRmqv0-xYUCVrY2VgFSUp8q2zFv30oPtC-naYwe1zW7oToK1nK5ix4Plvjub-30Kl3f_d-9Q"/>
+<div class="flex-grow">
+<h4 class="text-body-sm font-medium text-on-surface">Structured Cashmere Overcoat</h4>
+<p class="text-label-sm text-on-surface-variant">Outerwear</p>
+</div>
+<span class="text-body-sm font-semibold text-on-surface">$380.00</span>
+</a>
+<a class="flex items-center gap-3 p-3 hover:bg-surface-container-low transition-colors" href="#">
+<img alt="Boot" class="w-12 h-12 object-cover rounded-lg bg-surface-container-low" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArNMftu5v3yJeoh6ipmKHzMQZPocQrV8uiwetHf4VBgo2Mm_Mg_a9exEvH3p8kq8AuUMtcxmzmvjGqj0Mx6BlTir4yZ59VBVlYv0ybNRCmBTL-SOQIjSH_ufbfM2LQuMJs69XuNG7K8U-prT9P86rG9p_1_IfIst2OukewdesDITk9MvDIMDs0TFpCCMCf70nwGhWl7QI5TOmsVfRSbdnduTXbga7_gixKm0ra4U_ofKsmtuEA6npPLw"/>
+<div class="flex-grow">
+<h4 class="text-body-sm font-medium text-on-surface">Minimalist Leather Boot</h4>
+<p class="text-label-sm text-on-surface-variant">Footwear</p>
+</div>
+<span class="text-body-sm font-semibold text-on-surface">$240.00</span>
+</a>
+<a class="flex items-center gap-3 p-3 hover:bg-surface-container-low transition-colors" href="#">
+<img alt="Sweater" class="w-12 h-12 object-cover rounded-lg bg-surface-container-low" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4y9oHRcAMDVbLQJC7MszNhtbZbVuZY-s8cyoNfxe66xox1Ph4ms46b_DWO9PdoAhIM956wUvWBX1aetFXpBDlcDX1wQavo_3smMIAqHUhAE7CFNlEeLXhRieQgnGdjbYQZ5q_rhzVjIly1QvuxwCqIA1rUj_D_x0O-0zXtw-9cZFLlC_Xh51znPDvQMKqS7x-0T2MWmoT0nGcd5Ad3Dw1IAzvoHTrr0gxUDkl3PojTomZH2GMuyXnYg"/>
+<div class="flex-grow">
+<h4 class="text-body-sm font-medium text-on-surface">Merino Wool Crewneck</h4>
+<p class="text-label-sm text-on-surface-variant">Apparel</p>
+</div>
+<span class="text-body-sm font-semibold text-on-surface">$155.00</span>
+</a>
+</div>
+</div>
+</div>
+<button aria-label="Wishlist" class="p-2 text-on-surface-variant hover:text-primary transition-colors active:scale-98 duration-200">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button aria-label="Cart" class="p-2 text-on-surface-variant hover:text-primary transition-colors active:scale-98 duration-200 relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute top-1 right-1 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="w-full max-w-7xl mx-auto px-gutter py-space-lg flex-grow">
+<!-- Breadcrumb / Header info -->
+<div class="mb-space-lg">
+<div class="flex items-center gap-space-xs text-body-sm text-on-surface-variant mb-space-xs">
+<a class="hover:underline" href="#">Home</a>
+<span>/</span>
+<span class="text-on-surface">Shop</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">New Arrivals &amp; Essentials</h1>
+<p class="text-body-md text-on-surface-variant mt-space-xs">Showing 1-9 of 48 products with restrained minimalist aesthetic.</p>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-sm">
+<label class="text-label-md text-on-surface-variant whitespace-nowrap" for="sort">Sort by:</label>
+<select class="bg-surface border border-[#E5E5E5] text-on-surface text-label-md rounded-lg px-3 py-2 focus:outline-none focus:border-primary" id="sort">
+<option>Featured</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Customer Rating</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Layout Grid: Filter Sidebar + Product Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-space-xl items-start">
+<!-- Filter Sidebar -->
+<aside class="hidden lg:block lg:col-span-1 bg-surface border border-[#E5E5E5] p-space-lg rounded-xl sticky top-24">
+<div class="flex items-center justify-between pb-space-md border-b border-[#E5E5E5] mb-space-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Filters</h2>
+<button class="text-body-sm text-primary underline hover:text-primary-container">Reset All</button>
+</div>
+<!-- Categories -->
+<div class="mb-space-lg pb-space-lg border-b border-[#E5E5E5]">
+<h3 class="font-label-md text-label-md text-on-surface mb-space-md">Categories</h3>
+<div class="space-y-space-sm">
+<label class="flex items-center gap-space-sm text-body-md text-on-surface-variant cursor-pointer hover:text-on-surface">
+<input checked="" class="rounded border-[#E5E5E5] text-primary focus:ring-primary" type="checkbox"/>
+<span>Apparel &amp; Outerwear</span>
+</label>
+<label class="flex items-center gap-space-sm text-body-md text-on-surface-variant cursor-pointer hover:text-on-surface">
+<input class="rounded border-[#E5E5E5] text-primary focus:ring-primary" type="checkbox"/>
+<span>Footwear</span>
+</label>
+<label class="flex items-center gap-space-sm text-body-md text-on-surface-variant cursor-pointer hover:text-on-surface">
+<input class="rounded border-[#E5E5E5] text-primary focus:ring-primary" type="checkbox"/>
+<span>Accessories</span>
+</label>
+<label class="flex items-center gap-space-sm text-body-md text-on-surface-variant cursor-pointer hover:text-on-surface">
+<input class="rounded border-[#E5E5E5] text-primary focus:ring-primary" type="checkbox"/>
+<span>Home &amp; Living</span>
+</label>
+</div>
+</div>
+<!-- Price Range -->
+<div class="mb-space-lg pb-space-lg border-b border-[#E5E5E5]">
+<h3 class="font-label-md text-label-md text-on-surface mb-space-md">Price Range</h3>
+<div class="space-y-space-md">
+<input class="w-full accent-primary" max="1000" min="0" type="range" value="750"/>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>$0</span>
+<span>$750</span>
+</div>
+</div>
+</div>
+<!-- Sizes -->
+<div class="mb-space-lg pb-space-lg border-b border-[#E5E5E5]">
+<h3 class="font-label-md text-label-md text-on-surface mb-space-md">Sizes</h3>
+<div class="flex flex-wrap gap-space-sm">
+<button class="px-3 py-1.5 bg-[#F6F6F4] border border-[#E5E5E5] rounded-lg text-body-sm hover:border-primary transition-all">XS</button>
+<button class="px-3 py-1.5 bg-primary text-on-primary rounded-lg text-body-sm font-medium">S</button>
+<button class="px-3 py-1.5 bg-[#F6F6F4] border border-[#E5E5E5] rounded-lg text-body-sm hover:border-primary transition-all">M</button>
+<button class="px-3 py-1.5 bg-[#F6F6F4] border border-[#E5E5E5] rounded-lg text-body-sm hover:border-primary transition-all">L</button>
+<button class="px-3 py-1.5 bg-[#F6F6F4] border border-[#E5E5E5] rounded-lg text-body-sm hover:border-primary transition-all">XL</button>
+</div>
+</div>
+<!-- Colors -->
+<div class="mb-space-lg pb-space-lg border-b border-[#E5E5E5]">
+<h3 class="font-label-md text-label-md text-on-surface mb-space-md">Colors</h3>
+<div class="flex items-center gap-space-sm">
+<button aria-label="Black" class="w-6 h-6 rounded-full bg-neutral-900 border border-[#E5E5E5] ring-2 ring-primary ring-offset-2"></button>
+<button aria-label="Light Gray" class="w-6 h-6 rounded-full bg-neutral-200 border border-[#E5E5E5]"></button>
+<button aria-label="Navy" class="w-6 h-6 rounded-full bg-blue-900 border border-[#E5E5E5]"></button>
+<button aria-label="Amber" class="w-6 h-6 rounded-full bg-amber-700 border border-[#E5E5E5]"></button>
+</div>
+</div>
+<!-- Ratings -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-space-md">Ratings</h3>
+<div class="space-y-space-sm">
+<label class="flex items-center gap-space-sm text-body-md text-on-surface-variant cursor-pointer hover:text-on-surface">
+<input class="rounded border-[#E5E5E5] text-primary focus:ring-primary" type="checkbox"/>
+<span class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface-variant text-body-sm ml-1">(48)</span>
+</span>
+</label>
+<label class="flex items-center gap-space-sm text-body-md text-on-surface-variant cursor-pointer hover:text-on-surface">
+<input class="rounded border-[#E5E5E5] text-primary focus:ring-primary" type="checkbox"/>
+<span class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+<span class="text-on-surface-variant text-body-sm ml-1">(24)</span>
+</span>
+</label>
+</div>
+</div>
+</aside>
+<!-- Product Grid (3-column responsive) -->
+<div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-space-lg">
+<!-- Product Card 1 -->
+<div class="group bg-surface border border-[#E5E5E5] rounded-xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:border-primary">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[4/5]">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A striking minimal studio shot of a high-end black cashmere wool overcoat displayed neatly on a minimalist hanger against a smooth, soft-lit neutral gray background. The product emphasizes precise tailoring, rich fabric texture, and an understated luxury aesthetic with balanced high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr4rDm5UM_FfeoXuJvViB_BR56R_rcdUjM-Oz9y0_0N_LGsTSDk6qaVeBKTTmGRuhkqINPlqM7v47DiH2gscEM6MPFmCJkGLLhLwim6FHUAa963GYVm-jvMVAuQwlgNhS3ol00_kQID-WNvkktorcRGQYeX2QKI_hHuOWm54LotDy5spXRmqv0-xYUCVrY2VgFSUp8q2zFv30oPtC-naYwe1zW7oToK1nK5ix4Plvjub-30Kl3f_d-9Q"/>
+<span class="absolute top-3 left-3 bg-error text-on-error text-label-sm px-2 py-1 rounded font-medium">-20%</span>
+<button aria-label="Favorite" class="absolute top-3 right-3 p-2 bg-surface rounded-full text-on-surface-variant hover:text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">Outerwear</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Structured Cashmere Overcoat</h3>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-on-surface font-semibold">$380.00</span>
+<span class="text-body-sm text-on-surface-variant line-through">$475.00</span>
+</div>
+<button aria-label="Add to cart" class="p-2 bg-primary-container text-on-primary-container rounded-lg hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-surface border border-[#E5E5E5] rounded-xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:border-primary">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[4/5]">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A refined product photograph of minimalist leather ankle boots in rich dark brown calfskin. Placed on a pale concrete surface with gentle natural morning light creating soft shadows. The shot highlights exquisite leather grain, clean stitching, and contemporary design lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArNMftu5v3yJeoh6ipmKHzMQZPocQrV8uiwetHf4VBgo2Mm_Mg_a9exEvH3p8kq8AuUMtcxmzmvjGqj0Mx6BlTir4yZ59VBVlYv0ybNRCmBTL-SOQIjSH_ufbfM2LQuMJs69XuNG7K8U-prT9P86rG9p_1_IfIst2OukewdesDITk9MvDIMDs0TFpCCMCf70nwGhWl7QI5TOmsVfRSbdnduTXbga7_gixKm0ra4U_ofKsmtuEA6npPLw"/>
+<button aria-label="Favorite" class="absolute top-3 right-3 p-2 bg-surface rounded-full text-on-surface-variant hover:text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">Footwear</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Minimalist Leather Boot</h3>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-on-surface font-semibold">$240.00</span>
+</div>
+<button aria-label="Add to cart" class="p-2 bg-primary-container text-on-primary-container rounded-lg hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-surface border border-[#E5E5E5] rounded-xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:border-primary">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[4/5]">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="An elegant product shot of a premium heavy-knit merino wool crewneck sweater in an oatmeal color tone. Folded with precise geometry against an architectural minimalist background with warm, diffuse soft lighting emphasizing the tactile fabric quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4y9oHRcAMDVbLQJC7MszNhtbZbVuZY-s8cyoNfxe66xox1Ph4ms46b_DWO9PdoAhIM956wUvWBX1aetFXpBDlcDX1wQavo_3smMIAqHUhAE7CFNlEeLXhRieQgnGdjbYQZ5q_rhzVjIly1QvuxwCqIA1rUj_D_x0O-0zXtw-9cZFLlC_Xh51znPDvQMKqS7x-0T2MWmoT0nGcd5Ad3Dw1IAzvoHTrr0gxUDkl3PojTomZH2GMuyXnYg"/>
+<span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container text-label-sm px-2 py-1 rounded font-medium">New</span>
+<button aria-label="Favorite" class="absolute top-3 right-3 p-2 bg-surface rounded-full text-on-surface-variant hover:text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">Apparel</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Merino Wool Crewneck</h3>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-on-surface font-semibold">$155.00</span>
+</div>
+<button aria-label="Add to cart" class="p-2 bg-primary-container text-on-primary-container rounded-lg hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-surface border border-[#E5E5E5] rounded-xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:border-primary">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[4/5]">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A crisp commercial photograph of a structured leather tote bag in deep midnight blue. The handbag is displayed standing upright on a minimalist white table under clean studio lighting that accentuates the smooth leather texture and polished hardware." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKQaXk1Joeip6LRHDiha-KVqIxf4SxIeNPbbVxSjszXeaT_khIZegfE0tS9M0emZZFYxmdj95xt6HlAOaj60dOzihSXE80rWKhyMrfSVRPJBK4T91KgK4EdkeZKeKlMhngKSatg5q0kUN-C0jVmUrkG4X-YzG3ZPAgI2r7kM2gqQFClRH-wUxYXBa3l1KoIdiHWIBHEBG3oC3_x0bHKl4QrxxQR7sM4eHWS3ikPLXAYwMk9q20GJRTUQ"/>
+<span class="absolute top-3 left-3 bg-error text-on-error text-label-sm px-2 py-1 rounded font-medium">-15%</span>
+<button aria-label="Favorite" class="absolute top-3 right-3 p-2 bg-surface rounded-full text-on-surface-variant hover:text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">Accessories</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Structured Leather Tote</h3>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-on-surface font-semibold">$295.00</span>
+<span class="text-body-sm text-on-surface-variant line-through">$350.00</span>
+</div>
+<button aria-label="Add to cart" class="p-2 bg-primary-container text-on-primary-container rounded-lg hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group bg-surface border border-[#E5E5E5] rounded-xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:border-primary">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[4/5]">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A clean product flat lay of tailored pleated wool trousers in charcoal gray. Beautiful natural lighting falls evenly across the crisp fabric folds and waistband details, highlighting the high-end tailored construction." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq_NyCmdUAU3mSckWFAm0nnW5iQZo_EFbt3eHE0OYe9J0EMuSbgdlRVOfmxl_HJWHPsbf2zajBhEWgfArmACcD_1Zo_QIyAAH5ydir-txgzxcYQZRZjTCojr2mDtduhZUkI634QnZSSfnmeDDps5stFa-CCsPfI5dkEKw9AxYwgHd2TMop-neiRy4rqnZG6VsrnM98H1iWb3X_jHpMKP3jykilS1Dj4KhNxdNk23EqmcHuX62uWY_PxQ"/>
+<button aria-label="Favorite" class="absolute top-3 right-3 p-2 bg-surface rounded-full text-on-surface-variant hover:text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">Apparel</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Pleated Wool Trousers</h3>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-on-surface font-semibold">$190.00</span>
+</div>
+<button aria-label="Add to cart" class="p-2 bg-primary-container text-on-primary-container rounded-lg hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group bg-surface border border-[#E5E5E5] rounded-xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:border-primary">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[4/5]">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="An editorial style shot of a minimalist matte ceramic table lamp with a brass stem, casting soft warm light over a polished oak surface. The restrained composition reflects high-end interior decor design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjuCzeVy5QQ36ka_xtvmYiQf9U-IbZh_znSZuTxMUNXXMqztEvVJQp9DTVGDg11NgaRDVCZPQnySLghxQcErN3F4_WSFL23kUqW9Zs0_PhVPt3dOMIbJFO4qoANJAzBCOe8SH5TBO28HaZCJ2n5ywXG-rBsDyzvyuGIIN4_eLFXSG8dYwqcKBvh42g2dELRJ2LLBA7ewEn-Gz5TniSUQsHLOXFAUzgJsy70oF95zkaVpSlXlo3SYY8rA"/>
+<span class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container text-label-sm px-2 py-1 rounded font-medium">New</span>
+<button aria-label="Favorite" class="absolute top-3 right-3 p-2 bg-surface rounded-full text-on-surface-variant hover:text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">Home &amp; Living</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Ceramic Task Lamp</h3>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-on-surface font-semibold">$210.00</span>
+</div>
+<button aria-label="Add to cart" class="p-2 bg-primary-container text-on-primary-container rounded-lg hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 7 -->
+<div class="group bg-surface border border-[#E5E5E5] rounded-xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:border-primary">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[4/5]">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A crisp studio photograph of organic linen button-down shirt in pure white. Neatly displayed against an off-white textured backdrop with soft shadows that emphasize the breathable, lightweight fabric weave." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUicBialW2RiYknmwj7NwDbi_bsy6asJRp1rv1-atZEKKeBDwyh78cAu1nSUfcMBWOkHg7PK69ShdXuNS4tecF6W0_-F9ygxBCLdbEdD9OFSsmIWs7gdXQnMX2tIKJGPVIstC8YTElmrYhqk50bXPtM-Q0fZXtOLLKKnAbQqjjc2nQGl64nZ2aZjkBvSwjvtJ7j7l2Vi9G7ZNbgGicZ9yFQcavFYbQvrB8-g95UxPeoHZKdEAQGGP08g"/>
+<button aria-label="Favorite" class="absolute top-3 right-3 p-2 bg-surface rounded-full text-on-surface-variant hover:text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">Apparel</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Organic Linen Shirt</h3>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-on-surface font-semibold">$120.00</span>
+</div>
+<button aria-label="Add to cart" class="p-2 bg-primary-container text-on-primary-container rounded-lg hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 8 -->
+<div class="group bg-surface border border-[#E5E5E5] rounded-xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:border-primary">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[4/5]">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A professional product shot of minimalist leather slip-on loafers in smooth tan suede. Placed on a warm wooden ledge with clean architectural lines and diffused daylight creating a calm, high-end commercial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABdXul4k3sgfq18xfmNVw44w3j-pcDZ4dnwxwJFtqG1h3ymszc5f84rFQgRuMBqkWhNTk-fL2Ba1lkNaI9J2KP0G0IB_YlrhHlGRogltdEr_6m6Z85eoZlCNq54OYSUa7jnHojmbvBe1sRh7bq3EHqu8DSZrGT4z_di4hQxpGD-pORSIM74XZyCBqCM0QT_ki9z6KVTCf1KKAzB-6B5rR_0GblmMR_vyxsvpCNytbiXoH85ov8r7gIVw"/>
+<span class="absolute top-3 left-3 bg-error text-on-error text-label-sm px-2 py-1 rounded font-medium">-25%</span>
+<button aria-label="Favorite" class="absolute top-3 right-3 p-2 bg-surface rounded-full text-on-surface-variant hover:text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">Footwear</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Suede Loafers</h3>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-on-surface font-semibold">$165.00</span>
+<span class="text-body-sm text-on-surface-variant line-through">$220.00</span>
+</div>
+<button aria-label="Add to cart" class="p-2 bg-primary-container text-on-primary-container rounded-lg hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 9 -->
+<div class="group bg-surface border border-[#E5E5E5] rounded-xl overflow-hidden flex flex-col justify-between transition-all duration-200 hover:border-primary">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[4/5]">
+<img class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A luxurious minimalist cashmere scarf in olive green draped neatly over a light concrete surface. High-key natural lighting highlights the super-fine fibers and elegant fringe details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_1yYdX59wxmOPM1KGpwXp15IWIP4sYV-WgzKvflpss8zLzgjWuHRE1zqNp8R2fpgQSDlnk2XFNawGZlS88hJK55Sy4HBEnSyGArfWitGkFRJKJr991iXxNHBbyTU0BT0mzJCi02WVprLWQb86w-1Ev26qicCxMS7hU9QorjHATSxsz62xUcrPNUrJv_cDpc1nu91e7Ch5_Gu1RU4wdJSssFLjBoyJPKKbSZYvtrASHRJITsMWB39lGQ"/>
+<button aria-label="Favorite" class="absolute top-3 right-3 p-2 bg-surface rounded-full text-on-surface-variant hover:text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">Accessories</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Cashmere Scarf</h3>
+</div>
+<div class="mt-space-md flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-on-surface font-semibold">$95.00</span>
+</div>
+<button aria-label="Add to cart" class="p-2 bg-primary-container text-on-primary-container rounded-lg hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-space-xl flex items-center justify-center gap-space-sm border-t border-[#E5E5E5] pt-space-lg">
+<button class="px-4 py-2 border border-[#E5E5E5] rounded-lg text-body-sm text-on-surface hover:bg-surface-container-low transition-colors disabled:opacity-50" disabled="">Previous</button>
+<button class="w-10 h-10 bg-primary text-on-primary rounded-lg text-body-sm font-medium flex items-center justify-center">1</button>
+<button class="w-10 h-10 border border-[#E5E5E5] text-on-surface rounded-lg text-body-sm hover:bg-surface-container-low flex items-center justify-center transition-colors">2</button>
+<button class="w-10 h-10 border border-[#E5E5E5] text-on-surface rounded-lg text-body-sm hover:bg-surface-container-low flex items-center justify-center transition-colors">3</button>
+<button class="px-4 py-2 border border-[#E5E5E5] rounded-lg text-body-sm text-on-surface hover:bg-surface-container-low transition-colors">Next</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-inverse-surface border-t border-[#E5E5E5]">
+<div class="w-full px-gutter py-space-xl max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-space-md">
+<div class="flex flex-col md:flex-row items-center gap-space-lg">
+<span class="text-headline-sm font-semibold text-primary dark:text-inverse-primary">LuxStore</span>
+<p class="text-body-sm text-on-surface-variant dark:text-surface-variant">© 2023 LuxStore. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-space-lg">
+<a class="text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all" href="#">Customer Support</a>
+<a class="text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all" href="#">Privacy Policy</a>
+<a class="text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all" href="#">Terms of Service</a>
+<a class="text-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-all" href="#">Newsletter</a>
+</div>
+</div>
+</footer>
+<script>
+  const searchInput = document.getElementById('search-input');
+  const searchDropdown = document.getElementById('search-dropdown');
+
+  searchInput.addEventListener('input', (e) => {
+    if (e.target.value.trim().length > 0) {
+      searchDropdown.classList.remove('hidden');
+    } else {
+      searchDropdown.classList.add('hidden');
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!document.getElementById('search-container').contains(e.target)) {
+      searchDropdown.classList.add('hidden');
+    }
+  });
+
+  searchInput.addEventListener('focus', (e) => {
+    if (e.target.value.trim().length > 0) {
+      searchDropdown.classList.remove('hidden');
+    }
+  });
+</script>
+</body></html>

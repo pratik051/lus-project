@@ -1,0 +1,305 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Minimalist Precision Chronograph - LuxStore</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#2457c5",
+            "on-tertiary-fixed-variant": "#00522c",
+            "error": "#ba1a1a",
+            "secondary": "#3259b6",
+            "on-primary-container": "#ccd7ff",
+            "outline": "#737685",
+            "primary": "#003fa4",
+            "tertiary-container": "#1c6b40",
+            "on-primary-fixed-variant": "#003fa5",
+            "on-background": "#191b22",
+            "inverse-primary": "#b3c5ff",
+            "inverse-on-surface": "#f0f0fa",
+            "surface-container": "#ededf7",
+            "surface-container-low": "#f3f3fd",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff",
+            "surface-bright": "#faf8ff",
+            "on-tertiary-container": "#9be9b3",
+            "primary-container": "#2457c5",
+            "surface-container-high": "#e7e7f1",
+            "outline-variant": "#c3c6d5",
+            "tertiary-fixed-dim": "#8ad7a2",
+            "primary-fixed": "#dbe1ff",
+            "surface": "#faf8ff",
+            "primary-fixed-dim": "#b3c5ff",
+            "surface-dim": "#d9d9e3",
+            "inverse-surface": "#2e3037",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#e2e2eb",
+            "on-tertiary-fixed": "#00210f",
+            "surface-container-highest": "#e2e2eb",
+            "secondary-fixed-dim": "#b3c5ff",
+            "on-tertiary": "#ffffff",
+            "on-secondary-container": "#003183",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#799dff",
+            "secondary-fixed": "#dae1ff",
+            "on-secondary-fixed": "#001849",
+            "error-container": "#ffdad6",
+            "tertiary": "#00522c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "margin": "2rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xl": "3rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Inter"],
+            "headline-xl-mobile": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "headline-xl": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-sm": ["Inter"]
+          },
+          "fontSize": {
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Mobile Optimized Header) -->
+<header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md">
+<div class="flex justify-between items-center w-full px-4 py-3 max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<button aria-label="Go back" class="p-1 rounded-full text-on-surface hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<span class="text-headline-md font-headline-md font-semibold text-primary">LuxStore</span>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Shopping Cart" class="relative p-2 rounded-full text-on-surface hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+<span class="absolute top-1 right-1 bg-primary text-on-primary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Product Canvas -->
+<main class="pb-24">
+<!-- Image Gallery Slider -->
+<section class="relative w-full bg-surface-container-low overflow-hidden">
+<div class="flex overflow-x-auto snap-x snap-mandatory scrollbar-none w-full h-[360px]" id="gallery-slider">
+<div class="min-w-full snap-center flex items-center justify-center">
+<div class="w-full h-full bg-cover bg-center" data-alt="A studio product photograph of a luxury minimalist precision chronograph watch with a matte black dial, pristine white minimalist indices, and brushed stainless steel casing, presented against a soft neutral grey backdrop with professional diffused studio lighting emphasizing its sleek architectural profile and high-end atelier craftsmanship." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCPQC_okL2sEwaPa1fTd2epplRtU04Sbh9Oxl2ndKXZzr0cF75Kk3ySjVK0NNSZ2kmpZINRds72tjy5TtQ_CCQSLOj5HNQ49nOhJlrmbHoPAnN8NaV58gtHmZZ30sg_V4EvVGwPWLlR6duJ8xsqPsfd3ljnAOFeSYE-A-hGbgHSFjVLBxJIFaH1e0CzmUVim6Um-xS9wGfQVwn_gUTPUIBliWlawgDuq0NZ6IVgSjkrFchBTumlWqVhQ')"></div>
+</div>
+<div class="min-w-full snap-center flex items-center justify-center">
+<div class="w-full h-full bg-cover bg-center" data-alt="A close-up macro product photograph highlighting the detailed sub-dials and fine hands of a luxury minimalist precision chronograph watch, showcasing the refined matte black dial texture and polished bezel under sophisticated directional light in a high-end commercial studio setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCyKfbzEzteeS3AFZkxpAtm_ZrfCgj9-vl_p4IwTRkNPBVvPqvntU9LiKX4YKdVE7FtHXXWLjWNN9vgiK3PI00TDWlU6TludYHFSn7zr1WKkthh5H0dPtNzliWATQQrwdYuupPJwxLwUqsjHetr80Xqst08j566NE9_QqKiDZpAOvn3erWmopkHv4playzFJb3ZTkkTZa6MdnSRcfxz5Es08nvw3dnoQdXXpAGpl9GXhAVB_CujjAC9Gw')"></div>
+</div>
+<div class="min-w-full snap-center flex items-center justify-center">
+<div class="w-full h-full bg-cover bg-center" data-alt="An angled lifestyle photograph of a luxury minimalist precision chronograph watch resting on a smooth travertine stone surface next to high-end leather accessories, bathed in soft morning natural light filtering through sheer curtains, creating a calm, sophisticated atelier atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIamKgtlIWcUOzpeEN7faT9dutX-NR-5J0XqOzjfmlfMfTVF2Avb3S7Ln6RO7wOeAK_zzZRwei5tcmSBECQ9b6hk488ukLIqIbnNieQ4gfHcWL_E59cC-aX-_MxoITGIi3tignx3PVExbC5DItq3BHzXhx3L3laEF2y5iUdmBM2RSLgfqnhWzigzt2lgTXMnCkI77IgOcpZwsFmKEERbY5zSsvBhZ9WexYeNjpowXMIEADu2BB9-gbaQ')"></div>
+</div>
+</div>
+<!-- Dots Pagination -->
+<div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
+<button aria-label="Slide 1" class="w-2 h-2 rounded-full bg-primary transition-all"></button>
+<button aria-label="Slide 2" class="w-2 h-2 rounded-full bg-surface-variant transition-all"></button>
+<button aria-label="Slide 3" class="w-2 h-2 rounded-full bg-surface-variant transition-all"></button>
+</div>
+</section>
+<!-- Product Details Content -->
+<div class="px-4 py-6 space-y-6">
+<!-- Brand & Title -->
+<div>
+<p class="text-label-sm font-label-sm text-secondary uppercase tracking-wider mb-1">Luxstore Horology</p>
+<h1 class="text-headline-xl-mobile font-headline-xl-mobile text-on-surface">Minimalist Precision Chronograph</h1>
+</div>
+<!-- Rating & Reviews -->
+<div class="flex items-center gap-2">
+<div class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-body-sm font-body-sm font-semibold text-on-surface">4.9</span>
+<span class="text-body-sm font-body-sm text-outline">(128 reviews)</span>
+</div>
+<!-- Price Section -->
+<div class="flex items-baseline gap-3 pt-2">
+<span class="text-headline-lg-mobile font-headline-lg-mobile text-on-surface">$295.00</span>
+<span class="text-body-md font-body-md text-outline line-through">$370.00</span>
+<span class="text-label-sm font-label-sm text-tertiary bg-tertiary-fixed/30 px-2 py-0.5 rounded-full font-medium">Save $75</span>
+</div>
+<!-- Stock Badge -->
+<div class="inline-flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg border border-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-label-md font-label-md text-on-surface">In Stock — Ships within 24 hours</span>
+</div>
+<hr class="border-surface-variant">
+<!-- Color Swatches -->
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface font-semibold">Dial Color</span>
+<span class="text-body-sm font-body-sm text-outline">Matte Black</span>
+</div>
+<div class="flex gap-3">
+<button aria-label="Matte black dial selector" class="relative w-10 h-10 rounded-full bg-neutral-900 border-2 border-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-white">check</span>
+</button>
+<button aria-label="Silver dial selector" class="relative w-10 h-10 rounded-full bg-surface-container-highest border border-surface-variant flex items-center justify-center hover:border-outline transition-colors"></button>
+<button aria-label="Champagne dial selector" class="relative w-10 h-10 rounded-full bg-stone-300 border border-surface-variant flex items-center justify-center hover:border-outline transition-colors"></button>
+</div>
+</div>
+<!-- Case Diameter Options -->
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-label-md font-label-md text-on-surface font-semibold">Case Diameter</span>
+<span class="text-body-sm font-body-sm text-outline">40mm Standard</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="py-3 px-4 rounded-xl border-2 border-primary bg-primary-container/10 text-primary font-label-md text-center transition-all">
+            40mm Standard
+          </button>
+<button class="py-3 px-4 rounded-xl border border-surface-variant bg-surface text-on-surface font-label-md text-center hover:border-outline transition-all">
+            36mm Petite
+          </button>
+</div>
+</div>
+<!-- Delivery Estimate -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-surface-variant space-y-3">
+  <div class="flex items-start gap-3">
+    <span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">local_shipping</span>
+    <div>
+      <p class="text-label-md font-label-md text-on-surface font-semibold">Free Express Delivery</p>
+      <p class="text-body-sm font-body-sm text-outline">Estimated 2–3 business days</p>
+    </div>
+  </div>
+  <div class="border-t border-surface-variant/60 pt-2.5 flex items-start gap-3">
+    <span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">sync</span>
+    <div>
+      <p class="text-label-md font-label-md text-on-surface font-semibold">30-Day Thoughtful Returns</p>
+      <p class="text-body-sm font-body-sm text-outline">Complimentary returns and exchanges on all unworn items</p>
+    </div>
+  </div>
+</div>
+<hr class="border-surface-variant">
+<!-- Accordion Sections -->
+<div class="divide-y divide-surface-variant border-t border-b border-surface-variant">
+<!-- Accordion Item 1 -->
+<details class="group py-4">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="text-headline-sm font-headline-sm text-on-surface">Technical Specifications &amp; Details</span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-3 text-body-md font-body-md text-outline space-y-2">
+<p class="">• Case: 316L surgical-grade stainless steel</p>
+<p class="">• Movement: Japanese Quartz Chronograph movement</p>
+<p class="">• Glass: Sapphire crystal with anti-reflective coating</p>
+<p class="">• Water Resistance: 5 ATM (50 meters)</p>
+<p class="">• Strap: Interchangeable genuine Italian calf leather</p>
+</div>
+</details>
+<!-- Accordion Item 2 -->
+<details class="group py-4">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="text-headline-sm font-headline-sm text-on-surface">Warranty &amp; Packaging</span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-3 text-body-md font-body-md text-outline space-y-2">
+<p class="">Every LuxStore timepiece comes with an international 2-year limited warranty. Packaged in our signature matte-black presentation box with custom embossing, microfiber cleaning cloth, and stamped certificate of authenticity.</p>
+</div>
+</details>
+<!-- Accordion Item 3 -->
+<details class="group py-4">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<span class="text-headline-sm font-headline-sm text-on-surface">Verified Customer Reviews</span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-3 space-y-4">
+<div class="p-3 bg-surface-container-low rounded-lg">
+<div class="flex justify-between items-center mb-1">
+<span class="text-label-md font-label-md text-on-surface font-semibold">Julian V.</span>
+<div class="flex text-amber-500">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-outline">Exquisite attention to detail. The matte black dial has a subtle depth that looks phenomenal in person. Worth every penny.</p>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg">
+<div class="flex justify-between items-center mb-1">
+<span class="text-label-md font-label-md text-on-surface font-semibold">Elena R.</span>
+<div class="flex text-amber-500">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-body-sm font-body-sm text-outline">Fast shipping and stunning packaging. The 36mm size is ideal for a classic, sophisticated look.</p>
+</div>
+</div>
+</details>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Purchase Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-md border-t border-surface-variant p-4">
+<div class="flex items-center justify-between max-w-7xl mx-auto gap-4">
+<div>
+<p class="text-label-sm font-label-sm text-outline">Total Price</p>
+<p class="text-headline-md font-headline-md text-on-surface font-semibold">$295.00</p>
+</div>
+<button class="flex-1 bg-primary hover:bg-surface-tint text-on-primary font-label-md py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+<span class="">Add to Cart</span>
+</button>
+</div>
+</div>
+
+
+</body></html>

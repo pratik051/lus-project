@@ -1,0 +1,80 @@
+name: LuxStore CI - Build, Test & Quality Pipeline
+
+on:
+  push:
+    branches: [ main, staging ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  backend-test:
+    name: Backend Test & Security Suite
+    runs-on: ubuntu-latest
+
+    services:
+      mongodb:
+        image: mongo:7.0
+        ports:
+          - 27017:27017
+
+    defaults:
+      run:
+        working-directory: ./backend
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install Backend Dependencies
+        run: npm ci
+
+      - name: Seed Demo Data
+        run: npm run seed
+        env:
+          NODE_ENV: test
+          MONGODB_URI: mongodb://127.0.0.1:27017/luxstore_test
+          JWT_SECRET: ci_test_jwt_secret_32_characters_minimum_entropy
+          COOKIE_SECRET: ci_test_cookie_secret_32_chars_long
+
+      - name: Run Backend Automated Tests
+        run: npm test
+        env:
+          NODE_ENV: test
+          MONGODB_URI: mongodb://127.0.0.1:27017/luxstore_test
+          JWT_SECRET: ci_test_jwt_secret_32_characters_minimum_entropy
+          COOKIE_SECRET: ci_test_cookie_secret_32_chars_long
+
+  frontend-build:
+    name: Frontend Test & Production Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install Frontend Dependencies
+        run: npm ci
+
+      - name: Run Frontend Tests
+        run: npm test
+
+      - name: Production Vite Build
+        run: npm run build
+        env:
+          VITE_API_BASE_URL: https://api.luxstore.internal/api/v1
+          VITE_STORE_NAME: LuxStore
+          VITE_CURRENCY_SYMBOL: $

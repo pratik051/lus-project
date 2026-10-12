@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: luxstore-backend
+    env: node
+    plan: starter
+    region: oregon
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health/live
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: API_PREFIX
+        value: /api/v1
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: COOKIE_SECRET
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
+      - key: STORE_CURRENCY
+        value: USD
+      - key: FREE_SHIPPING_THRESHOLD
+        value: "150"
+      - key: DEFAULT_TAX_RATE
+        value: "0.08"

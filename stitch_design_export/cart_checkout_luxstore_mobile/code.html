@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="e-en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>LuxStore Checkout</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-container": "#9be9b3",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface-variant": "#e2e2eb",
+            "tertiary-container": "#1c6b40",
+            "inverse-surface": "#2e3037",
+            "surface": "#faf8ff",
+            "on-primary-fixed": "#001849",
+            "outline": "#737685",
+            "outline-variant": "#c3c6d5",
+            "on-secondary-container": "#003183",
+            "on-tertiary-fixed": "#00210f",
+            "primary": "#003fa4",
+            "surface-container-highest": "#e2e2eb",
+            "primary-container": "#2457c5",
+            "secondary-fixed-dim": "#b3c5ff",
+            "on-surface": "#191b22",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#b3c5ff",
+            "on-primary": "#ffffff",
+            "tertiary-fixed": "#a6f4bd",
+            "tertiary-fixed-dim": "#8ad7a2",
+            "on-primary-fixed-variant": "#003fa5",
+            "background": "#faf8ff",
+            "on-secondary-fixed": "#001849",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#dae1ff",
+            "on-background": "#191b22",
+            "on-secondary-fixed-variant": "#0f409d",
+            "on-tertiary-fixed-variant": "#00522c",
+            "primary-fixed": "#dbe1ff",
+            "surface-bright": "#faf8ff",
+            "secondary": "#3259b6",
+            "secondary-container": "#799dff",
+            "on-secondary": "#ffffff",
+            "inverse-primary": "#b3c5ff",
+            "on-primary-container": "#ccd7ff",
+            "on-surface-variant": "#434653",
+            "surface-dim": "#d9d9e3",
+            "surface-container-low": "#f3f3fd",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#f0f0fa",
+            "surface-tint": "#2457c5",
+            "tertiary": "#00522c",
+            "surface-container-high": "#e7e7f1",
+            "surface-container": "#ededf7"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "3rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "gutter": "1.5rem"
+          },
+          "fontFamily": {
+            "body-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-xl": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-xl-mobile": ["Inter"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col justify-between">
+<!-- Compact Mobile Header -->
+<header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md px-gutter py-space-md flex justify-between items-center">
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-headline-md font-headline-md font-semibold text-primary">LuxStore</h1>
+<div class="flex items-center justify-center w-10 h-10 text-primary">
+<span class="material-symbols-outlined">lock</span>
+</div>
+</header>
+<!-- Main Checkout Content -->
+<main class="w-full max-w-lg mx-auto px-gutter py-space-md flex-grow pb-32">
+<!-- Collapsible Order Summary Banner -->
+<div class="bg-surface-container-low rounded-xl mb-space-lg overflow-hidden border border-surface-variant transition-all">
+<button class="w-full px-space-md py-space-md flex justify-between items-center text-left" onclick="toggleSummary()">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary">shopping_bag</span>
+<div>
+<span class="font-label-md text-on-surface">Order Summary</span>
+<p class="font-body-sm text-on-surface-variant">2 items • $159.84</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-primary font-bold">$159.84</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-200" id="summary-chevron">expand_more</span>
+</div>
+</button>
+<div class="hidden px-space-md pb-space-md border-t border-surface-variant pt-space-md space-y-space-md" id="summary-content">
+<!-- Item 1 -->
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high bg-cover bg-center shrink-0" data-alt="A clean product shot of a minimalist ceramic mug featuring matte neutral glazing, sitting on a pale oak surface with soft directional morning light, high-end e-commerce style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTj1tGyuVogXVwjA5J4A0lN5jk2ep-VvD-0mzYxPDcQ4mDklO8nWHdxxKGO9-x4pssJsKx7Y3wLelT8IPHPO4WSmpkKPVYndvcrJCVC-w_Su6LTJaOYSPFf76YLkdcLc3huyp05jX2OufiFuMChRgw52fu-vyNCiQ9nJQLDP9isXRRfwBunpT2gTA4l4O7E_GOpufth18VpVTVWG96Vs95y-KymenIS1z-lKV0erexLZdeYDS-N5Hq0g')"></div>
+<div class="flex-grow">
+<h4 class="font-label-md text-on-surface">Minimalist Ceramic Mug</h4>
+<p class="font-body-sm text-on-surface-variant">Qty: 1</p>
+</div>
+<span class="font-body-md font-medium">$28.00</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high bg-cover bg-center shrink-0" data-alt="A premium brushed brass desk lamp with an adjustable arm and clean geometric lines, displayed against a muted warm grey wall in a contemporary luxury interior." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAOcaUq6Dgah14M8L8_wG3uAxlioIMmPSbPsN_XG2HyZNidUP0ned8Rtk4F2_wXDXJb3g2uQ1X7trVs6fhOuQ2Gl-s8tGKJEyf4KRGo7zAmvpPpTKdlOAD8-5pOPFIGcWdmVp-uj-D7eIFGWSlznncW4IrUqiUOnvCDQ72OPu9vKP1kRRwynClWwXIFqMFkOwZX1edxSK6Cce8HLd5abDWYWEhCaeWHE4fb_AUVM6BISeE1UjTDlg8lXg')"></div>
+<div class="flex-grow">
+<h4 class="font-label-md text-on-surface">Brass Desk Lamp</h4>
+<p class="font-body-sm text-on-surface-variant">Qty: 1</p>
+</div>
+<span class="font-body-md font-medium">$120.00</span>
+</div>
+<div class="border-t border-surface-variant pt-space-md space-y-space-xs"><div class="flex justify-between font-body-sm text-on-surface-variant"><span class="">Item Subtotal</span><span class="">$148.00</span></div><div class="flex justify-between font-body-sm text-on-surface-variant"><span class="">Standard Shipping</span><span class="text-tertiary font-medium">Free ($0.00)</span></div><div class="flex justify-between font-body-sm text-on-surface-variant"><span class="">Estimated Tax</span><span class="">$11.84</span></div><div class="flex justify-between font-label-md text-on-surface pt-space-xs border-t border-surface-variant"><span class="font-bold">Total Payable</span><span class="font-bold text-primary">$159.84</span></div></div>
+</div>
+</div>
+<!-- Shipping Address Form -->
+<section class="mb-space-lg"><h2 class="font-headline-sm text-on-surface mb-space-md flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary">local_shipping</span>Shipping Address</h2><form class="space-y-space-md"><div class="grid grid-cols-2 gap-space-md"><div class="relative"><input required="" class="peer w-full px-space-md pt-6 pb-2 bg-surface-container-lowest border border-surface-variant rounded-lg text-on-surface focus:outline-none focus:border-primary-container transition-colors" id="first_name" placeholder=" " type="text"><label class="absolute text-on-surface-variant text-body-md duration-200 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-space-md peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3" for="first_name">First Name *</label></div><div class="relative"><input required="" class="peer w-full px-space-md pt-6 pb-2 bg-surface-container-lowest border border-surface-variant rounded-lg text-on-surface focus:outline-none focus:border-primary-container transition-colors" id="last_name" placeholder=" " type="text"><label class="absolute text-on-surface-variant text-body-md duration-200 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-space-md peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3" for="last_name">Last Name *</label></div></div><div class="relative"><input required="" class="peer w-full px-space-md pt-6 pb-2 bg-surface-container-lowest border border-surface-variant rounded-lg text-on-surface focus:outline-none focus:border-primary-container transition-colors" id="address" placeholder=" " type="text"><label class="absolute text-on-surface-variant text-body-md duration-200 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-space-md peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3" for="address">Street Address *</label></div><div class="relative"><input class="peer w-full px-space-md pt-6 pb-2 bg-surface-container-lowest border border-surface-variant rounded-lg text-on-surface focus:outline-none focus:border-primary-container transition-colors" id="apartment" placeholder=" " type="text"><label class="absolute text-on-surface-variant text-body-md duration-200 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-space-md peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3" for="apartment">Apartment, Suite, Unit (Optional)</label></div><div class="grid grid-cols-2 gap-space-md"><div class="relative"><input required="" class="peer w-full px-space-md pt-6 pb-2 bg-surface-container-lowest border border-surface-variant rounded-lg text-on-surface focus:outline-none focus:border-primary-container transition-colors" id="city" placeholder=" " type="text"><label class="absolute text-on-surface-variant text-body-md duration-200 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-space-md peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3" for="city">City *</label></div><div class="relative"><input required="" inputmode="numeric" class="peer w-full px-space-md pt-6 pb-2 bg-surface-container-lowest border border-surface-variant rounded-lg text-on-surface focus:outline-none focus:border-primary-container transition-colors" id="postal_code" placeholder=" " type="text"><label class="absolute text-on-surface-variant text-body-md duration-200 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-space-md peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3" for="postal_code">Postal Code *</label></div></div></form></section>
+<!-- Payment Method Section -->
+<section class="mb-space-lg"><h2 class="font-headline-sm text-on-surface mb-space-md flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary">credit_card</span>Payment Method</h2><div class="grid grid-cols-2 gap-space-md mb-space-md"><button class="flex items-center justify-center gap-space-sm p-space-md rounded-lg border-2 border-primary bg-primary-container/10 text-primary font-label-md transition-all" id="btn-apple" onclick="selectPayment('apple')" type="button"><span class="material-symbols-outlined">phone_iphone</span>Apple Pay</button><button class="flex items-center justify-center gap-space-sm p-space-md rounded-lg border border-surface-variant bg-surface-container-lowest text-on-surface-variant font-label-md transition-all" id="btn-card" onclick="selectPayment('card')" type="button"><span class="material-symbols-outlined">credit_card</span>Credit Card</button></div><div id="apple-pay-info" class="p-space-md rounded-lg bg-surface-container-low border border-surface-variant text-center"><p class="font-label-md text-on-surface font-semibold mb-space-xs">Fast &amp; Secure Checkout</p><p class="font-body-sm text-on-surface-variant">Confirm and authorize your transaction seamlessly with Touch ID or Face ID upon tapping Pay below.</p></div><div class="space-y-space-md hidden" id="card-fields"><div class="relative"><input class="peer w-full px-space-md pt-6 pb-2 bg-surface-container-lowest border border-surface-variant rounded-lg text-on-surface focus:outline-none focus:border-primary-container transition-colors" id="card_name" placeholder=" " type="text"><label class="absolute text-on-surface-variant text-body-md duration-200 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-space-md peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3" for="card_name">Name on Card *</label></div><div class="relative"><input inputmode="numeric" maxlength="19" class="peer w-full px-space-md pt-6 pb-2 bg-surface-container-lowest border border-surface-variant rounded-lg text-on-surface focus:outline-none focus:border-primary-container transition-colors" id="card_number" placeholder=" " type="text"><label class="absolute text-on-surface-variant text-body-md duration-200 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-space-md peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3" for="card_number">Card Number (e.g. 4532 •••• •••• ••••) *</label></div><div class="grid grid-cols-2 gap-space-md"><div class="relative"><input inputmode="numeric" maxlength="5" class="peer w-full px-space-md pt-6 pb-2 bg-surface-container-lowest border border-surface-variant rounded-lg text-on-surface focus:outline-none focus:border-primary-container transition-colors" id="expiry" placeholder=" " type="text"><label class="absolute text-on-surface-variant text-body-md duration-200 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-space-md peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3" for="expiry">MM / YY *</label></div><div class="relative"><input inputmode="numeric" maxlength="4" class="peer w-full px-space-md pt-6 pb-2 bg-surface-container-lowest border border-surface-variant rounded-lg text-on-surface focus:outline-none focus:border-primary-container transition-colors" id="cvv" placeholder=" " type="password"><label class="absolute text-on-surface-variant text-body-md duration-200 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-space-md peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3" for="cvv">CVV *</label></div></div></div></section>
+</main><script>window.selectPayment = function(method) { var btnApple = document.getElementById('btn-apple'); var btnCard = document.getElementById('btn-card'); var appleInfo = document.getElementById('apple-pay-info'); var cardFields = document.getElementById('card-fields'); var actionBtn = document.getElementById('checkout-action-btn'); if (method === 'apple') { btnApple.className = 'flex items-center justify-center gap-space-sm p-space-md rounded-lg border-2 border-primary bg-primary-container/10 text-primary font-label-md transition-all'; btnCard.className = 'flex items-center justify-center gap-space-sm p-space-md rounded-lg border border-surface-variant bg-surface-container-lowest text-on-surface-variant font-label-md transition-all'; appleInfo.classList.remove('hidden'); cardFields.classList.add('hidden'); actionBtn.className = 'w-full bg-[#000000] text-white hover:bg-neutral-800 transition-colors py-3.5 rounded-full font-label-md flex items-center justify-center gap-space-xs shadow-sm active:scale-[0.98]'; actionBtn.innerHTML = '<span class="font-bold">Pay with</span><span class="font-bold flex items-center gap-1"><svg class="w-4 h-4 inline-block fill-current mb-0.5" viewBox="0 0 170 170"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.69-7.85-12.02-14.42-6.41-9.67-11.49-20.73-15.24-33.19-3.75-12.46-5.63-24.16-5.63-35.11 0-14.74 3.73-27.12 11.19-37.13 7.46-10.01 16.94-15.11 28.45-15.31 4.58 0 9.87 1.25 15.87 3.75 6 2.5 10.15 3.79 12.46 3.86 1.96 0 6.27-1.39 12.92-4.17 6.66-2.77 12.35-4.04 17.07-3.8 12.82.72 23.01 5.38 30.56 13.98-11.3 6.84-16.82 16.48-16.57 28.93.25 9.77 4.04 18.06 11.37 24.87 7.33 6.81 16.09 10.83 26.29 12.06-2.28 7.07-5.18 14.51-8.7 22.31zM119.22 33.5c0-7.39 2.67-14.33 8.01-20.82 5.34-6.49 12.02-10.72 20.04-12.68.22 1.3.33 2.5.33 3.59 0 7.38-2.79 14.52-8.37 21.41-5.58 6.89-12.42 11.02-20.52 12.39-.22-1.3-.33-2.5-.33-3.89z"></path></svg>Pay</span>'; } else { btnCard.className = 'flex items-center justify-center gap-space-sm p-space-md rounded-lg border-2 border-primary bg-primary-container/10 text-primary font-label-md transition-all'; btnApple.className = 'flex items-center justify-center gap-space-sm p-space-md rounded-lg border border-surface-variant bg-surface-container-lowest text-on-surface-variant font-label-md transition-all'; appleInfo.classList.add('hidden'); cardFields.classList.remove('hidden'); actionBtn.className = 'w-full bg-primary-container text-on-primary hover:bg-[#1946A3] transition-colors py-3.5 rounded-lg font-label-md flex items-center justify-center gap-space-sm shadow-sm active:scale-[0.98]'; actionBtn.innerHTML = '<span class="material-symbols-outlined">lock</span> Complete Secure Order'; } };</script>
+<!-- Sticky Bottom Action Bar -->
+<footer class="fixed bottom-0 left-0 right-0 bg-surface/95 backdrop-blur-md border-t border-surface-variant px-gutter py-space-md z-40"><div class="max-w-lg mx-auto flex flex-col gap-space-sm"><div class="flex justify-between items-center"><span class="font-body-md text-on-surface-variant">Total Payable</span><span class="font-headline-md text-primary font-bold">$159.84</span></div><button id="checkout-action-btn" class="w-full bg-[#000000] text-white hover:bg-neutral-800 transition-colors py-3.5 rounded-full font-label-md flex items-center justify-center gap-space-xs shadow-sm active:scale-[0.98]"><span class="font-bold">Pay with</span><span class="font-bold flex items-center gap-1"><svg class="w-4 h-4 inline-block fill-current mb-0.5" viewBox="0 0 170 170"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.69-7.85-12.02-14.42-6.41-9.67-11.49-20.73-15.24-33.19-3.75-12.46-5.63-24.16-5.63-35.11 0-14.74 3.73-27.12 11.19-37.13 7.46-10.01 16.94-15.11 28.45-15.31 4.58 0 9.87 1.25 15.87 3.75 6 2.5 10.15 3.79 12.46 3.86 1.96 0 6.27-1.39 12.92-4.17 6.66-2.77 12.35-4.04 17.07-3.8 12.82.72 23.01 5.38 30.56 13.98-11.3 6.84-16.82 16.48-16.57 28.93.25 9.77 4.04 18.06 11.37 24.87 7.33 6.81 16.09 10.83 26.29 12.06-2.28 7.07-5.18 14.51-8.7 22.31zM119.22 33.5c0-7.39 2.67-14.33 8.01-20.82 5.34-6.49 12.02-10.72 20.04-12.68.22 1.3.33 2.5.33 3.59 0 7.38-2.79 14.52-8.37 21.41-5.58 6.89-12.42 11.02-20.52 12.39-.22-1.3-.33-2.5-.33-3.89z"></path></svg>Pay</span></button><div class="flex items-center justify-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[14px]">lock</span><span class="font-label-sm">SSL Encrypted Checkout</span></div></div></footer>
+<script>
+    function toggleSummary() {
+      const content = document.getElementById('summary-content');
+      const chevron = document.getElementById('summary-chevron');
+      content.classList.toggle('hidden');
+      chevron.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+    }
+
+    function selectPayment(method) {
+      const btnApple = document.getElementById('btn-apple');
+      const btnCard = document.getElementById('btn-card');
+      const cardFields = document.getElementById('card-fields');
+
+      if (method === 'apple') {
+        btnApple.className = "flex items-center justify-center gap-space-sm p-space-md rounded-lg border-2 border-primary bg-primary-container/10 text-primary font-label-md transition-all";
+        btnCard.className = "flex items-center justify-center gap-space-sm p-space-md rounded-lg border border-surface-variant bg-surface-container-lowest text-on-surface-variant font-label-md transition-all";
+        cardFields.style.opacity = '0.4';
+        cardFields.style.pointerEvents = 'none';
+      } else {
+        btnCard.className = "flex items-center justify-center gap-space-sm p-space-md rounded-lg border-2 border-primary bg-primary-container/10 text-primary font-label-md transition-all";
+        btnApple.className = "flex items-center justify-center gap-space-sm p-space-md rounded-lg border border-surface-variant bg-surface-container-lowest text-on-surface-variant font-label-md transition-all";
+        cardFields.style.opacity = '1';
+        cardFields.style.pointerEvents = 'auto';
+      }
+    }
+  </script>
+
+
+</body></html>

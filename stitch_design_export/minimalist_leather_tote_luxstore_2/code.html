@@ -1,0 +1,410 @@
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LuxStore - Product Detail</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#b3c5ff",
+            "primary-fixed": "#dbe1ff",
+            "on-error": "#ffffff",
+            "surface-container-high": "#e7e7f1",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e2e2eb",
+            "secondary": "#3259b6",
+            "secondary-container": "#799dff",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#f3f3fd",
+            "tertiary-fixed-dim": "#8ad7a2",
+            "on-primary-fixed-variant": "#003fa5",
+            "surface-container": "#ededf7",
+            "outline": "#737685",
+            "tertiary-container": "#1c6b40",
+            "surface-dim": "#d9d9e3",
+            "on-primary-container": "#ccd7ff",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed-variant": "#0f409d",
+            "on-tertiary-fixed": "#00210f",
+            "outline-variant": "#c3c6d5",
+            "background": "#faf8ff",
+            "primary-container": "#2457c5",
+            "surface-bright": "#faf8ff",
+            "primary": "#003fa4",
+            "inverse-primary": "#b3c5ff",
+            "inverse-surface": "#2e3037",
+            "tertiary": "#00522c",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e2e2eb",
+            "surface": "#faf8ff",
+            "on-surface": "#191b22",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "on-background": "#191b22",
+            "tertiary-fixed": "#a6f4bd",
+            "inverse-on-surface": "#f0f0fa",
+            "on-secondary-container": "#003183",
+            "on-tertiary-fixed-variant": "#00522c",
+            "primary-fixed-dim": "#b3c5ff",
+            "on-secondary-fixed": "#001849",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#9be9b3",
+            "secondary-fixed": "#dae1ff",
+            "on-primary-fixed": "#001849",
+            "surface-tint": "#2457c5",
+            "on-surface-variant": "#434653"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-xl": "3rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-xl-mobile": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-xl": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          "fontSize": {
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-gutter py-space-md max-w-7xl mx-auto">
+<div class="flex items-center gap-space-xl">
+<a class="text-headline-md font-headline-md font-semibold text-primary dark:text-inverse-primary" href="#">LuxStore</a>
+<nav class="hidden md:flex items-center gap-space-lg">
+<a class="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Shop</a>
+<a class="text-label-md font-label-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Collections</a>
+<a class="text-label-md font-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">About</a>
+</nav>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="hidden md:flex items-center relative">
+<input class="bg-surface-container-low border border-outline-variant rounded-xl px-3 py-1.5 text-body-sm focus:outline-none focus:border-primary w-64" placeholder="Search products..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 text-outline text-sm">search</span>
+</div>
+<button aria-label="Wishlist" class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+<span class="hidden md:inline text-label-md font-label-md">Wishlist</span>
+</button>
+<button aria-label="Cart" class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="hidden md:inline text-label-md font-label-md">Cart</span>
+<span class="absolute -top-1 -right-1 bg-primary text-on-primary text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="max-w-7xl mx-auto px-gutter py-space-xl">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-space-xs text-body-sm text-outline mb-space-lg">
+<a class="hover:text-primary" href="#">Home</a>
+<span>/</span>
+<a class="hover:text-primary" href="#">Collections</a>
+<span>/</span>
+<span class="text-on-surface font-medium">Minimalist Precision Chronograph</span>
+</nav>
+<!-- Product Grid Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- Gallery Column (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Main Image -->
+<div class="w-full h-[480px] md:h-[600px] bg-surface-container-low rounded-xl overflow-hidden border border-surface-variant relative">
+<img class="w-full h-full object-cover" data-alt="A pristine high-resolution product photography shot of a luxury minimalist chronograph watch resting on a monolithic concrete pedestal. The scene is illuminated by soft, natural morning light casting gentle shadows, highlighting the matte black dial and brushed stainless steel case. The overall aesthetic is calm, sophisticated, and clean with a restrained color palette of cool grays, deep blacks, and subtle metallic silver accents in a modern light-mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArMWa2cqi0NDjtdGI3LA2rireNbKJi5zHAlWYJrOknXPBRx7lEPuGaUo1Xko_rhvxObOLq-jp_-fYVorjyVcF2Zw1IuGMvhNOmaBsIK-cbU1Y_zBFDUZ3gMZgdLbO0rnsYLlDWs_DM97bR32DF7qiFTHNtLIvQooCdE9CIiClxdg2baRuwHZWXNKAkfGdFvs29JbhUvtyce_djR7XbKT7FzmyCoKjIzyahuihOkhHT_vo828lz6SbhVA"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary text-label-sm px-3 py-1 rounded-full font-medium">
+            20% OFF
+          </div>
+</div>
+<!-- Thumbnails -->
+<div class="grid grid-cols-4 gap-space-md">
+<button class="h-24 bg-surface-container-low rounded-lg overflow-hidden border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="Detailed close-up product photography thumbnail showing the sophisticated matte black watch dial with polished silver hands and minimalist indices, set against a neutral light background with professional studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYd5QMI4waHSCCSNjYCIi_Z3fL8VyTIY9JnVNB-JReaAdcNDqjzMlb1Si9daXA6CBuvQX0JDiIIr5JkYB04xpf2X1D9RNklL0mXt5Qscfj0bnOubeSFWDIHepXvpMbU0l5V_MPDBymGPZPfVo1ldUnfIXjzNz5dPQmIznRZrcg_XQ4UbBFTETK8p392R26s64iuOruVSSnD2EUD_ackTdY0bCVfgI8MgatS99dliG1PMkjjOqdKS-q0w"/>
+</button>
+<button class="h-24 bg-surface-container-low rounded-lg overflow-hidden border border-surface-variant opacity-70 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Detailed product photography thumbnail showing the side profile of the brushed stainless steel watch case and custom crown, highlighted with clean studio lighting on a neutral surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBD3HIwuUxgO7LJkZ1Yz4mdPh3lpJJP53E7gEU1OwJBndMQM-Z5gs0SvzSNElivIVWLw-xdCJ7gIEYITNXbT4YtEksYkahxvj94_-X8oPX0G4JHlPjqQEGhqBopNNzLM_7d3zfJ-QtnOu6DhUVSjW_6kRk7YqQgvUq0WBdX0P1iepa5dbkt81Ez3h4Z5B5YXyJZwolXqnKSS2XP7r_QFhORrQfn_fwBJ-Z4M1gFrFVLMq6y68mvmwvNg"/>
+</button>
+<button class="h-24 bg-surface-container-low rounded-lg overflow-hidden border border-surface-variant opacity-70 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Detailed product photography thumbnail displaying the premium genuine leather watch strap with contrast stitching and a stainless steel buckle, photographed cleanly in a bright modern studio setup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1c6QxC5eItvKI7pKdj6p6ANOsUIICmPI2DsTMga8Wo8Wz36C0MIbpj03jJMcpJ5PEQyF4wHkabw1TBIe2ruoXemb0FBnODKg4rMZnxjKveAW1Z4TORgbdnnBKnE-2X1WIuU8H_w_d4u59iDbHqQed22mEPafFRBenD4WLtTNaYJSmUI9DhzIQizFgP6_F2DwCYtvfy4WuRavz3XOSUIWY3yKLffrCwRsKldC_vbEfuTHsos5CnGosAA"/>
+</button>
+<button class="h-24 bg-surface-container-low rounded-lg overflow-hidden border border-surface-variant opacity-70 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Detailed product photography thumbnail featuring the watch worn elegantly on a model's wrist, emphasizing scale, proportion, and understated luxury in natural daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQIipe7uFUg-HHjPpq9smw6QeCr7jT1M5HL9B-FQCHq-eP35-Qg5sdzhP9ALMu-CbihaGQgcox8ZjKMdVVYb7tkFr18lmMdmkUoi6NPMrj0McohzPf6i7Df-tVx-SwJHxIyiJd89OqyhQjMQwYFUdY5RPyqyOfEIKq42pG5CHxg_Wk8Ow97-uz6hUsfmosFxF21VRAu3apqS5DuirDLOQDFFi1GGjAC8CMM1035Op47CBCz1TDxdPZXA"/>
+</button>
+</div>
+</div>
+<!-- Details Column (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Title & Subtitle -->
+<div>
+<span class="text-label-sm font-label-sm text-primary font-bold uppercase tracking-wider">LuxStore Horology</span>
+<h1 class="text-headline-lg font-headline-lg text-on-surface mt-space-xs">Minimalist Precision Chronograph</h1>
+<p class="text-body-md text-on-surface-variant mt-space-sm">Engineered with Swiss quartz movement, sapphire crystal glass, and interchangeable Italian leather straps.</p>
+</div>
+<!-- Rating -->
+<div class="flex items-center gap-space-sm">
+<div class="flex text-amber-500">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-body-sm text-on-surface-variant font-medium">4.9 (128 verified reviews)</span>
+</div>
+<!-- Pricing -->
+<div class="flex items-baseline gap-space-md pt-2 border-t border-surface-variant">
+<span class="text-headline-md font-headline-md text-primary font-bold">$295.00</span>
+<span class="text-body-lg text-outline line-through">$370.00</span>
+<span class="text-label-sm font-label-sm bg-tertiary-container text-on-tertiary px-2 py-0.5 rounded">Save $75</span>
+</div>
+<!-- Stock Availability -->
+<div class="flex items-center gap-space-sm text-tertiary font-medium text-body-sm bg-surface-container-low p-3 rounded-xl border border-surface-variant">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>In Stock — Ships within 24 hours</span>
+</div>
+<!-- Variant Selector: Color -->
+<div class="flex flex-col gap-space-sm">
+<label class="text-label-md font-label-md font-medium text-on-surface">Dial Color: <span class="text-on-surface-variant font-normal">Matte Black</span></label>
+<div class="flex gap-space-sm">
+<button aria-label="Matte Black" class="w-8 h-8 rounded-full bg-inverse-surface border-2 border-primary ring-2 ring-offset-2 ring-primary"></button>
+<button aria-label="Polar White" class="w-8 h-8 rounded-full bg-surface-container-lowest border border-outline-variant hover:border-primary transition-colors"></button>
+<button aria-label="Brushed Rose Gold" class="w-8 h-8 rounded-full bg-[#E0A996] border border-outline-variant hover:border-primary transition-colors"></button>
+</div>
+</div>
+<!-- Variant Selector: Size/Strap -->
+<div class="flex flex-col gap-space-sm">
+<label class="text-label-md font-label-md font-medium text-on-surface">Case Diameter & Strap: <span class="text-on-surface-variant font-normal">40mm - Black Leather</span></label>
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="py-2.5 px-4 text-center border-2 border-primary bg-primary-container text-on-primary-container rounded-lg font-medium text-body-sm">40mm Standard</button>
+<button class="py-2.5 px-4 text-center border border-surface-variant bg-surface-container-low text-on-surface rounded-lg font-medium text-body-sm hover:border-primary transition-colors">36mm Petite</button>
+</div>
+</div>
+<!-- Delivery Estimate -->
+<div class="flex items-start gap-space-md p-4 bg-surface-container-low rounded-xl border border-surface-variant">
+<span class="material-symbols-outlined text-primary text-xl">local_shipping</span>
+<div>
+<p class="text-body-md font-medium text-on-surface">Free Express Delivery</p>
+<p class="text-body-sm text-on-surface-variant">Estimated delivery between <strong class="text-on-surface">Oct 12</strong> and <strong class="text-on-surface">Oct 14</strong>.</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-space-sm pt-4">
+<button class="w-full py-4 bg-primary text-on-primary rounded-xl font-medium text-body-lg hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-[0.98] shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_bag</span>
+            Add to Cart
+          </button>
+<button class="w-full py-3.5 bg-surface-container-low text-on-surface border border-surface-variant rounded-xl font-medium text-body-md hover:bg-surface-container-high transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">bolt</span>
+            Instant Buy with Apple Pay
+          </button>
+</div>
+</div>
+</div>
+<!-- Collapsible Specifications & Details -->
+<div class="mt-space-xl pt-space-xl border-t border-surface-variant max-w-4xl mx-auto">
+<h2 class="text-headline-md font-headline-md mb-space-lg text-center">Technical Specifications & Details</h2>
+<div class="flex flex-col gap-space-md">
+<!-- Accordion Item 1 -->
+<div class="border border-surface-variant rounded-xl overflow-hidden bg-surface-container-low">
+<button class="w-full p-space-md flex justify-between items-center text-left font-medium text-body-lg text-on-surface hover:bg-surface-container-high transition-colors">
+<span>Case & Movement Materials</span>
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+<div class="px-space-md pb-space-md text-body-md text-on-surface-variant border-t border-surface-variant pt-space-md">
+            Crafted from surgical-grade 316L stainless steel with a brushed and polished finish. Powered by a high-precision Ronda Swiss quartz movement ensuring lifelong accuracy (-10/+20 seconds per month).
+          </div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="border border-surface-variant rounded-xl overflow-hidden bg-surface-container-low">
+<button class="w-full p-space-md flex justify-between items-center text-left font-medium text-body-lg text-on-surface hover:bg-surface-container-high transition-colors">
+<span>Dimensions & Water Resistance</span>
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+<div class="px-space-md pb-space-md text-body-md text-on-surface-variant border-t border-surface-variant pt-space-md">
+            Case diameter: 40mm. Case thickness: 7.8mm. Lug width: 20mm. Water resistant up to 5 ATM / 50 meters, suitable for everyday wear, light swimming, and rain exposure.
+          </div>
+</div>
+<!-- Accordion Item 3 -->
+<div class="border border-surface-variant rounded-xl overflow-hidden bg-surface-container-low">
+<button class="w-full p-space-md flex justify-between items-center text-left font-medium text-body-lg text-on-surface hover:bg-surface-container-high transition-colors">
+<span>Warranty & Packaging</span>
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+<div class="px-space-md pb-space-md text-body-md text-on-surface-variant border-t border-surface-variant pt-space-md">
+            Comes complete with a 2-year international warranty, signature matte black presentation box, leather travel pouch, and strap changing tool.
+          </div>
+</div>
+</div>
+</div>
+<!-- Customer Reviews Section -->
+<div class="mt-space-xl pt-space-xl border-t border-surface-variant">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-space-lg gap-space-md">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Customer Reviews</h2>
+<p class="text-body-md text-on-surface-variant mt-space-xs">Based on 128 verified purchases</p>
+</div>
+<button class="px-space-md py-2.5 bg-surface-container-low border border-surface-variant rounded-xl font-medium text-body-md hover:border-primary transition-colors">
+          Write a Review
+        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Review 1 -->
+<div class="p-space-lg bg-surface-container-low rounded-xl border border-surface-variant flex flex-col gap-space-sm">
+<div class="flex justify-between items-center">
+<div class="flex text-amber-500">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-body-sm text-outline">2 days ago</span>
+</div>
+<h3 class="text-body-lg font-medium text-on-surface">Exquisite craftsmanship and understated design</h3>
+<p class="text-body-md text-on-surface-variant">The watch looks even better in person than in the photos. The slim profile fits effortlessly under dress shirt cuffs, and the leather strap broke in within just two days.</p>
+<div class="flex items-center gap-space-sm mt-space-sm pt-space-sm border-t border-surface-variant">
+<span class="text-label-md font-label-md font-medium text-on-surface">Marcus Vance</span>
+<span class="text-body-sm text-tertiary font-medium">✓ Verified Buyer</span>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="p-space-lg bg-surface-container-low rounded-xl border border-surface-variant flex flex-col gap-space-sm">
+<div class="flex justify-between items-center">
+<div class="flex text-amber-500">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-body-sm text-outline">1 week ago</span>
+</div>
+<h3 class="text-body-lg font-medium text-on-surface">Stunning minimalist aesthetic</h3>
+<p class="text-body-md text-on-surface-variant">I receive compliments daily. The matte black dial is incredibly legible, and the packaging feels like opening an expensive piece of tech. Highly recommend.</p>
+<div class="flex items-center gap-space-sm mt-space-sm pt-space-sm border-t border-surface-variant">
+<span class="text-label-md font-label-md font-medium text-on-surface">Elena Rostova</span>
+<span class="text-body-sm text-tertiary font-medium">✓ Verified Buyer</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Related Products Section -->
+<div class="mt-space-xl pt-space-xl border-t border-surface-variant">
+<h2 class="text-headline-md font-headline-md text-on-surface mb-space-lg">You May Also Like</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Related Item 1 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden border border-surface-variant flex flex-col">
+<div class="h-64 bg-surface-container-high overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Product photography of a minimalist Italian leather wallet in tan brown, resting on a clean concrete surface under bright, diffuse studio lighting. The aesthetic is modern, clean, and restrained." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZCr-TnYSAg9aAdwVAeHOoEApcTVR6SIaEDNN8RaXJVEe-QrQ4i4QrKnRMc4ANFi8sLE93xA-SqZUJSONyZw4YiY5PLeUsuEWX5Gm4nhEBc2xT6pDlAvxM_M0dz3-0q9pWW7XXamo-_xIGfq4-sxaBHD718M92-CK2pZNKPah6k6nkCCeh0cG85y5GnjjjX6aeBBBz0AlXmU_qSRBYtcK6g3S7HX9ATJ9cCHfwtFDuWEK8uMDucDHvEA"/>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between gap-space-sm">
+<div>
+<span class="text-label-sm font-label-sm text-outline">Accessories</span>
+<h3 class="text-body-lg font-medium text-on-surface mt-space-xs">Tuscan Leather Cardholder</h3>
+</div>
+<div class="flex justify-between items-center mt-space-sm">
+<span class="text-headline-sm font-headline-sm text-primary font-bold">$85.00</span>
+<button aria-label="Quick add Tuscan Leather Cardholder" class="p-2 rounded-lg bg-surface border border-surface-variant hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Related Item 2 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden border border-surface-variant flex flex-col">
+<div class="h-64 bg-surface-container-high overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Product photography of a brushed stainless steel minimalist money clip, resting on a clean surface with soft white studio lighting. Clean, high-end, premium minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjfw1tzy59rvFt5FzMtPg7tTbOftTXN8ZGVgwfclMNt77jkiBCKy3J-G521y7-5wE7TIxFT2rrOraUxKdog_8AUnygEfY-PuZ_XfkkMgWXzj2r6yF5aakeU8G-waOiFy2EZ0uefBeE_26hAMlQayBx0X5pH_a3nAws70spOx3gZy7jPlG2EiODYoBwFfa2neKaJ-DS0V4e2af6rFCC8LaqYuxeS8CXn8_sYpttHhRanNCcyPrlKnJyVA"/>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between gap-space-sm">
+<div>
+<span class="text-label-sm font-label-sm text-outline">Hardware</span>
+<h3 class="text-body-lg font-medium text-on-surface mt-space-xs">Architectural Steel Money Clip</h3>
+</div>
+<div class="flex justify-between items-center mt-space-sm">
+<span class="text-headline-sm font-headline-sm text-primary font-bold">$45.00</span>
+<button aria-label="Quick add Architectural Steel Money Clip" class="p-2 rounded-lg bg-surface border border-surface-variant hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Related Item 3 -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden border border-surface-variant flex flex-col">
+<div class="h-64 bg-surface-container-high overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Product photography of a sleek titanium-framed minimalist pair of sunglasses, displayed against a bright neutral background with soft studio shadows. Modern and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLLb5F_rFpi848Cepz1XJfY3_1UkVhcMPjznvhbb9TvoR25vgvW_Sd_iIBrdF4gxt2bydYm5liTQvchK-necmtxHlMsJqWqFVQkVIiBTKC-m2AzZGpYLCxeUskz9njdFT33szN_cu1FUjeowUDbt1EAJkYyCdlNxeRMQbxWUjsqOMV83eOvyf3g3FiH8uJBDRyqUakagXOKOMwvvaCGjBZ4d5zuJwzRF4TJEFONEyL2X9KrIGk4O3bUQ"/>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between gap-space-sm">
+<div>
+<span class="text-label-sm font-label-sm text-outline">Eyewear</span>
+<h3 class="text-body-lg font-medium text-on-surface mt-space-xs">Titanium Optical Sunglasses</h3>
+</div>
+<div class="flex justify-between items-center mt-space-sm">
+<span class="text-headline-sm font-headline-sm text-primary font-bold">$210.00</span>
+<button aria-label="Quick add Titanium Optical Sunglasses" class="p-2 rounded-lg bg-surface border border-surface-variant hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-inverse-surface mt-space-xl">
+<div class="w-full px-gutter py-space-xl max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-space-md">
+<div class="flex flex-col gap-space-xs text-center md:text-left">
+<span class="text-headline-sm font-semibold text-primary dark:text-inverse-primary">LuxStore</span>
+<p class="text-body-sm text-on-surface-variant dark:text-surface-variant">© 2023 LuxStore. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-space-lg">
+<a class="text-body-sm font-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Customer Support</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-body-sm font-body-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Newsletter</a>
+</div>
+</div>
+</footer>
+</body></html>
